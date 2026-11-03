@@ -168,25 +168,24 @@ h2.title{font-family:"IBM Plex Sans Arabic","Readex Pro",sans-serif;font-weight:
   radial-gradient(600px 400px at 85% 8%,rgba(201,168,92,.16),transparent 70%),
   radial-gradient(500px 500px at 0% 100%,rgba(124,196,238,.10),transparent 70%)}
 .inv .rings{display:none}
+.inv .half{position:absolute;top:104px;height:300px;opacity:.16;pointer-events:none}
+.inv .half-aiu{left:-150px;width:300px}
+.inv .half-ieee{right:-156px;width:312px}
 .inv .rings::before,.inv .rings::after{content:"";position:absolute;border-radius:50%;border:1px solid rgba(201,168,92,.12)}
 .inv .rings::before{inset:-70px}
 .inv .rings::after{inset:-150px;border-color:rgba(201,168,92,.07)}
-.inv .hero{position:absolute;top:110px;right:56px;left:56px;text-align:center}
-.inv .lockup{display:flex;justify-content:center;align-items:center;gap:34px;margin:22px 0 4px}
-.inv .lockup .l-aiu{height:78px}
-.inv .lockup .l-ieee{height:40px}
-.inv .lockup .sep{width:1px;height:64px;background:rgba(201,168,92,.45)}
+.inv .hero{position:absolute;top:150px;right:56px;left:56px;text-align:center}
 .inv .hero .eyebrow::after{content:"";width:22px;height:2px;background:var(--gold)}
 .inv h1{font-family:"IBM Plex Sans Arabic","Readex Pro",sans-serif;font-weight:700;font-size:58px;line-height:1.2;margin-top:14px;color:#D9BB78;padding-bottom:.2em;margin-bottom:-.2em}
 .inv .mark{font-family:"Readex Pro",sans-serif;font-weight:700;font-size:46px;letter-spacing:2px;margin-top:2px;direction:ltr}
 .inv .hero h2{font-family:"IBM Plex Sans Arabic","Readex Pro",sans-serif;font-weight:500;font-size:21px;color:var(--gold-soft);margin-top:14px}
-.inv .lead{position:absolute;top:388px;right:72px;left:72px;text-align:center;font-size:17px;line-height:2;color:rgba(255,255,255,.85)}
-.inv .notice{position:absolute;top:540px;right:56px;left:56px;border-radius:18px;background:rgba(255,255,255,.04);border:1px solid rgba(201,168,92,.35);padding:22px 26px 22px 26px;display:grid;grid-template-columns:52px 1fr;gap:18px}
+.inv .lead{position:absolute;top:356px;right:72px;left:72px;text-align:center;font-size:17px;line-height:2;color:rgba(255,255,255,.85)}
+.inv .notice{position:absolute;top:508px;right:56px;left:56px;border-radius:18px;background:rgba(255,255,255,.04);border:1px solid rgba(201,168,92,.35);padding:22px 26px 22px 26px;display:grid;grid-template-columns:52px 1fr;gap:18px}
 .inv .notice .ic{width:52px;height:52px;border-radius:14px;background:rgba(201,168,92,.14);color:var(--gold);display:grid;place-items:center}
 .inv .notice .ic svg{width:26px;height:26px}
 .inv .notice h3{font-family:"IBM Plex Sans Arabic","Readex Pro",sans-serif;font-weight:600;font-size:20px;color:var(--gold);margin-bottom:6px}
 .inv .notice p{font-size:14.2px;line-height:1.95;color:rgba(255,255,255,.82)}
-.inv .dates{position:absolute;top:790px;right:56px;left:56px;display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.inv .dates{position:absolute;top:748px;right:56px;left:56px;display:grid;grid-template-columns:1fr 1fr;gap:16px}
 .inv .d{border-radius:18px;padding:20px 22px;display:flex;gap:16px;align-items:center}
 .inv .d.deadline{background:linear-gradient(135deg,#e2c983,var(--gold) 60%,#b8944a);color:var(--navy-950)}
 .inv .d.event{background:var(--navy-800);border:1px solid rgba(255,255,255,.1)}
@@ -389,6 +388,8 @@ h2.title{font-family:"IBM Plex Sans Arabic","Readex Pro",sans-serif;font-weight:
 <!-- ======================= PAGE 4 ======================= -->
 <section class="page inv dark">
   <div class="bg"></div>
+  <img class="half half-aiu" src="assets/aiu-logo-white.png" alt="">
+  <img class="half half-ieee" src="assets/ieee-emblem-white.png" alt="">
   <div class="rings"></div>
   <div class="run">
     <div class="sec"><span class="num">04</span><span class="bar"></span><span>خاتمة ودعوة</span></div>
@@ -397,11 +398,6 @@ h2.title{font-family:"IBM Plex Sans Arabic","Readex Pro",sans-serif;font-weight:
 
   <div class="hero">
     <h1>حفل الافتتاح الرسمي</h1>
-    <div class="lockup">
-      <img class="l-ieee" src="assets/ieee-white.png" alt="IEEE">
-      <span class="sep"></span>
-      <img class="l-aiu" src="assets/aiu-logo-white.png" alt="الجامعة العربية الدولية">
-    </div>
     <h2>دعوة للتسجيل وحضور حفل الافتتاح الرسمي</h2>
   </div>
 
