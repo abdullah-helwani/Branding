@@ -1,0 +1,8 @@
+Photo credits (Unsplash License - free for commercial and print use, attribution optional)
+
+assets/aud-graduation.jpg  - Ethan Gowans    https://unsplash.com/photos/NXnX56qv2c0
+assets/aud-work.jpg        - Vitaly Gariev   https://unsplash.com/photos/F4coHibryBo
+assets/aud-discovery.jpg   - RUT MIIT        https://unsplash.com/photos/RbC4-8CdbVQ
+conference-audience-unsplash.jpg - Marwen Larafa https://unsplash.com/photos/3ZAtXAQ81IU
+
+All other photos: Arab International University website (aiu.edu.sy) and the original brochure.
