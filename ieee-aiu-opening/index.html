@@ -6,181 +6,174 @@
 <title>IEEE AIU Opening</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&family=Noto+Kufi+Arabic:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&family=Noto+Kufi+Arabic:wght@500;600;700;800&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
 <style>
 /* ------------------------------------------------------------------
-   Visual identity
-   One family of blues built on the official IEEE blue (#00629B):
-   ink navy for depth, IEEE blue as the brand colour, a light sky tint
-   used only on dark grounds, and a cool mist for quiet surfaces.
-   Type: Noto Kufi Arabic (display) + IBM Plex Sans Arabic (text).
+   Identity: ceremony navy + muted gold on ivory paper.
+   Three colours only. Gold is a flat ink (rules, numerals, labels):
+   no gradients, no glows.
+   Type: Noto Kufi Arabic (titles), IBM Plex Sans Arabic (text),
+   Playfair Display (figures only).
 ------------------------------------------------------------------- */
 :root{
-  --ink:#0A2540;
-  --blue:#00629B;
-  --blue-2:#0077BE;
-  --sky:#8FD0F0;
-  --mist:#EEF3F7;
-  --text:#16222F;
-  --muted:#5B6979;
-  --rule:#D3DCE4;
-  --paper:#FFFFFF;
+  --navy:#0B1E3A;
+  --gold:#B8955A;
+  --gold-lt:#D8BE8A;
+  --ivory:#F7F4EE;
+  --text:#1B2433;
+  --muted:#5E6573;
+  --rule:#E0D8C8;
   --gut:60px;
 }
 @page{size:600pt 804pt;margin:0}
 *{box-sizing:border-box;margin:0;padding:0}
-html,body{background:#cfd6dc}
-body{font-family:"IBM Plex Sans Arabic",sans-serif;color:var(--text);-webkit-print-color-adjust:exact;print-color-adjust:exact;font-feature-settings:"kern"}
-.page{width:800px;height:1072px;position:relative;overflow:hidden;margin:24px auto;background:var(--paper)}
+html,body{background:#c9c6bf}
+body{font-family:"IBM Plex Sans Arabic",sans-serif;color:var(--text);-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.page{width:800px;height:1072px;position:relative;overflow:hidden;margin:24px auto;background:var(--ivory)}
 @media print{html,body{background:none}.page{margin:0;page-break-after:always;break-after:page}}
-.k{font-family:"Noto Kufi Arabic",sans-serif}
 .ltr{direction:ltr;unicode-bidi:isolate;display:inline-block}
-.photo{background-size:cover;background-position:center;filter:saturate(.86) contrast(1.03)}
+.fig{font-family:"Playfair Display",serif;font-weight:500;direction:ltr;unicode-bidi:isolate}
+.photo{background-size:cover;background-position:center}
+.frame{position:absolute;inset:22px;border:1px solid rgba(184,149,90,.6);pointer-events:none;z-index:5}
 
-/* running head + folio (pages 2–3) */
-.head{position:absolute;top:38px;right:var(--gut);left:var(--gut);display:flex;justify-content:space-between;align-items:center;padding-bottom:12px;border-bottom:1px solid var(--rule);font-size:12px;color:var(--muted)}
-.head b{font-weight:600;color:var(--blue);margin-left:10px;font-size:12px}
+/* running head / folio */
+.head{position:absolute;top:40px;right:var(--gut);left:var(--gut);display:flex;justify-content:space-between;align-items:center;padding-bottom:12px;border-bottom:1px solid var(--rule);font-size:12px;color:var(--muted)}
+.head .no{font-family:"Playfair Display",serif;color:var(--gold);font-size:14px;margin-left:10px}
 .head img{height:20px;display:block}
-.folio{position:absolute;bottom:34px;right:var(--gut);left:var(--gut);display:flex;justify-content:space-between;font-size:11.5px;color:var(--muted);padding-top:12px;border-top:1px solid var(--rule)}
-.folio .ltr{letter-spacing:.3px}
+.folio{position:absolute;bottom:32px;right:var(--gut);left:var(--gut);display:flex;justify-content:space-between;font-size:11.5px;color:var(--muted);padding-top:12px;border-top:1px solid var(--rule)}
+.on-navy .folio{color:rgba(255,255,255,.55);border-top-color:rgba(255,255,255,.15)}
 
-h2.h{font-family:"Noto Kufi Arabic",sans-serif;font-weight:700;font-size:34px;line-height:1.35;color:var(--ink)}
-.kicker{font-size:13px;font-weight:600;color:var(--blue);margin-bottom:6px}
+h2.h{font-family:"Noto Kufi Arabic",sans-serif;font-weight:700;font-size:33px;line-height:1.4;color:var(--navy)}
 
 /* ======================= 1 · COVER ======================= */
-.cover .top{position:absolute;top:0;right:0;left:0;height:196px;padding:34px var(--gut) 0}
-.cover .ids{display:flex;justify-content:space-between;align-items:center}
-.cover .branch{font-size:15px;font-weight:600;color:var(--ink);line-height:1.5}
-.cover .branch span{display:block;font-weight:500;font-size:12.5px;color:var(--blue);letter-spacing:.4px}
+.cover{background:var(--navy);color:#fff}
+.cover .ids{position:absolute;top:50px;right:var(--gut);left:var(--gut);display:flex;justify-content:space-between;align-items:center;z-index:2}
+.cover .branch{font-size:15px;font-weight:600;line-height:1.55}
+.cover .branch span{display:block;font-size:11.5px;font-weight:500;color:var(--gold-lt);letter-spacing:1.6px}
 .cover .logos{display:flex;align-items:center;gap:20px}
-.cover .logos .ieee{height:40px}
-.cover .logos .embs{height:30px;padding-right:20px;border-right:1px solid var(--rule)}
-.cover .claim{margin-top:30px;font-family:"Noto Kufi Arabic";font-weight:600;font-size:20px;line-height:1.7;color:var(--ink)}
-.cover .claim span{color:var(--blue)}
-.cover .hero{position:absolute;top:196px;right:0;left:0;height:456px;background-image:url(assets/auditorium.jpg);background-position:center 45%}
-.cover .band{position:absolute;top:652px;right:0;left:0;bottom:0;background:var(--blue);color:#fff;padding:40px var(--gut) 0}
-.cover .band::before{content:"";position:absolute;top:0;right:0;width:240px;height:6px;background:var(--ink)}
-.cover h1{font-family:"Noto Kufi Arabic";font-weight:800;font-size:60px;line-height:1.3;letter-spacing:-.5px}
-.cover .sub{font-size:20px;font-weight:500;margin-top:4px}
-.cover .en{font-family:"IBM Plex Sans Arabic";font-size:24px;font-weight:600;color:var(--sky);margin-top:2px;letter-spacing:.2px}
-.cover .tag{font-size:15.5px;color:rgba(255,255,255,.85);margin-top:14px}
-.cover .meta{position:absolute;right:var(--gut);left:var(--gut);bottom:38px;display:flex;border-top:1px solid rgba(255,255,255,.35);padding-top:16px;font-size:15px;font-weight:500}
-.cover .meta div{flex:1}
-.cover .meta div+div{border-right:1px solid rgba(255,255,255,.35);padding-right:22px}
-.cover .meta small{display:block;font-size:11.5px;color:var(--sky);font-weight:500;margin-bottom:2px}
+.cover .logos .ieee{height:36px}
+.cover .logos .embs{height:30px;padding-right:20px;border-right:1px solid rgba(255,255,255,.3)}
+.cover .hero{position:absolute;top:130px;right:0;left:0;height:520px;background-image:url(assets/auditorium.jpg);background-position:center 42%}
+.cover .hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,30,58,.15) 0%,rgba(11,30,58,0) 40%,rgba(11,30,58,.6) 82%,var(--navy) 100%)}
+.cover .body{position:absolute;top:628px;right:var(--gut);left:var(--gut);z-index:2}
+.cover .claim{font-size:16px;font-weight:500;color:var(--gold-lt);line-height:1.8}
+.cover h1{font-family:"Noto Kufi Arabic";font-weight:800;font-size:62px;line-height:1.4;margin-top:12px;letter-spacing:-.5px}
+.cover .sub{font-size:21px;font-weight:500;margin-top:2px}
+.cover .en{font-size:15px;font-weight:600;letter-spacing:3px;color:var(--gold-lt);margin-top:10px}
+.cover .tag{font-size:16px;color:rgba(255,255,255,.78);margin-top:18px}
+.cover .meta{position:absolute;right:var(--gut);left:var(--gut);bottom:56px;display:grid;grid-template-columns:1fr 1fr;gap:28px;z-index:2}
+.cover .meta div{padding-top:16px;border-top:2px solid var(--gold)}
+.cover .meta small{display:block;font-size:12px;color:var(--gold-lt);font-weight:600;margin-bottom:4px}
+.cover .meta b{font-size:17px;font-weight:600}
 
 /* ======================= 2 · ABOUT ======================= */
-.about .intro{position:absolute;top:96px;right:var(--gut);left:var(--gut);display:grid;grid-template-columns:1fr 200px;gap:48px}
-.about .intro p{font-size:15.5px;line-height:1.95;color:var(--text);margin-top:10px}
-.about .stats{border-right:1px solid var(--rule);padding-right:28px;display:flex;flex-direction:column;justify-content:center;gap:18px}
-.about .stat b{display:block;font-family:"IBM Plex Sans Arabic";font-weight:700;font-size:44px;line-height:1.05;color:var(--blue);direction:ltr;text-align:right}
-.about .stat span{font-size:13.5px;color:var(--muted)}
-.about .stat+.stat{padding-top:18px;border-top:1px solid var(--rule)}
+.about .intro{position:absolute;top:100px;right:var(--gut);left:var(--gut);display:grid;grid-template-columns:1fr 210px;gap:44px}
+.about .intro p{font-size:15.5px;line-height:1.95;margin-top:12px}
+.about .stats{border-right:1px solid var(--rule);padding-right:30px;display:flex;flex-direction:column;justify-content:center}
+.about .stat b{display:block;font-size:52px;line-height:1.05;color:var(--gold);text-align:right}
+.about .stat span{font-size:13.5px;color:var(--muted);display:block;margin-top:4px}
+.about .stat+.stat{margin-top:18px;padding-top:18px;border-top:1px solid var(--rule)}
 
-.about .fields{position:absolute;top:336px;right:0;left:0;background:var(--mist);padding:26px var(--gut) 28px;height:384px}
-.about .fields .row{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:18px}
-.about .fields h3{font-family:"Noto Kufi Arabic";font-weight:700;font-size:21px;color:var(--ink)}
+.about .fields{position:absolute;top:338px;right:0;left:0;height:396px;background:var(--navy);color:#fff;padding:30px var(--gut) 0}
+.about .fields h3{font-family:"Noto Kufi Arabic";font-weight:700;font-size:22px;margin:0 0 20px}
 .about .grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
-.about .fac .photo{height:118px}
-.about .fac h4{font-size:14.5px;font-weight:700;color:var(--ink);margin:12px 0 5px;line-height:1.45;padding-top:9px;border-top:2px solid var(--blue)}
-.about .fac p{font-size:12.4px;line-height:1.75;color:var(--muted)}
+.about .fac .photo{height:120px}
+.about .fac h4{font-size:14.5px;font-weight:700;margin:14px 0 6px;line-height:1.45;color:var(--gold-lt)}
+.about .fac p{font-size:12.4px;line-height:1.75;color:rgba(255,255,255,.78)}
 
-.about .how{position:absolute;top:752px;right:var(--gut);left:var(--gut)}
+.about .how{position:absolute;top:760px;right:var(--gut);left:var(--gut)}
 .about .how h2{font-size:24px;margin-bottom:14px}
-.about .two{display:grid;grid-template-columns:1fr 1fr;gap:0}
-.about .two>div{display:grid;grid-template-columns:38px 1fr;gap:4px}
-.about .two>div+div{border-right:1px solid var(--rule);padding-right:24px}
-.about .two>div:first-child{padding-left:24px}
-.about .two .n{font-weight:700;font-size:15px;color:var(--blue);padding-top:2px}
-.about .two h4{font-size:16px;font-weight:700;color:var(--ink);margin-bottom:3px}
+.about .two{display:grid;grid-template-columns:1fr 1fr}
+.about .two>div{display:grid;grid-template-columns:auto 1fr;gap:14px}
+.about .two>div:first-child{padding-left:26px}
+.about .two>div+div{border-right:1px solid var(--rule);padding-right:26px}
+.about .two .n{font-size:24px;color:var(--gold);line-height:1.2}
+.about .two h4{font-size:16px;font-weight:700;color:var(--navy);margin-bottom:3px}
 .about .two p{font-size:13.4px;line-height:1.8;color:var(--muted)}
-.about .perks{margin-top:14px;padding:10px 0;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);text-align:center;font-weight:600;font-size:14.5px;color:var(--ink)}
-.about .perks i{display:inline-block;width:5px;height:5px;background:var(--blue);margin:0 14px 3px;vertical-align:middle}
+.about .perks{margin-top:16px;padding:11px 0;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);text-align:center;font-weight:600;font-size:14.5px;color:var(--navy)}
+.about .perks i{display:inline-block;width:6px;height:6px;background:var(--gold);transform:rotate(45deg);margin:0 16px 3px;vertical-align:middle}
 
 /* ======================= 3 · AUDIENCE ======================= */
-.aud .top{position:absolute;top:96px;right:var(--gut);left:var(--gut)}
-.aud .cols{position:absolute;top:212px;right:var(--gut);left:var(--gut);display:grid;grid-template-columns:repeat(3,1fr)}
+.aud .top{position:absolute;top:100px;right:var(--gut);left:var(--gut)}
+.aud .cols{position:absolute;top:220px;right:var(--gut);left:var(--gut);display:grid;grid-template-columns:repeat(3,1fr)}
 .aud .col{padding:0 22px}
 .aud .col:first-child{padding-right:0}
 .aud .col:last-child{padding-left:0}
 .aud .col+.col{border-right:1px solid var(--rule)}
-.aud .num{font-family:"IBM Plex Sans Arabic";font-weight:300;font-size:56px;line-height:1;color:var(--blue)}
-.aud .col h3{font-family:"Noto Kufi Arabic";font-weight:700;font-size:17.5px;line-height:1.6;color:var(--ink);margin:14px 0 16px;min-height:56px}
-.aud ul{list-style:none;border-top:2px solid var(--ink)}
-.aud li{font-size:13.6px;line-height:1.8;color:var(--text);padding:11px 0;border-bottom:1px solid var(--rule)}
+.aud .num{font-size:60px;line-height:1;color:var(--gold)}
+.aud .col h3{font-family:"Noto Kufi Arabic";font-weight:700;font-size:17.5px;line-height:1.6;color:var(--navy);margin:16px 0;min-height:56px}
+.aud ul{list-style:none;border-top:2px solid var(--navy)}
+.aud li{font-size:13.6px;line-height:1.8;padding:11px 0;border-bottom:1px solid var(--rule)}
 .aud li:last-child{border-bottom:0}
-.aud li b{font-weight:700;color:var(--ink)}
+.aud li b{font-weight:700;color:var(--navy)}
 
-.aud .faq{position:absolute;right:0;left:0;top:704px;bottom:0;background:var(--ink);color:#fff;padding:34px var(--gut) 0}
-.aud .faq h3{font-family:"Noto Kufi Arabic";font-weight:700;font-size:22px;margin-bottom:22px}
-.aud .faq .g{display:grid;grid-template-columns:230px 1fr}
-.aud .faq h4{font-size:13px;font-weight:600;color:var(--sky);margin-bottom:8px}
-.aud .faq .price{display:flex;align-items:flex-end;gap:10px}
-.aud .faq .price b{font-family:"IBM Plex Sans Arabic";font-weight:700;font-size:64px;line-height:.95}
-.aud .faq .price span{font-size:14px;line-height:1.45;padding-bottom:4px}
-.aud .faq .g>div+div{border-right:1px solid rgba(255,255,255,.22);padding-right:30px}
-.aud .faq p{font-size:14.5px;line-height:1.95;color:rgba(255,255,255,.9)}
-.aud .faq .bar{position:absolute;top:0;right:0;width:240px;height:6px;background:var(--blue)}
-.aud .folio{bottom:30px;border-top-color:rgba(255,255,255,.18);color:rgba(255,255,255,.6);z-index:2}
+.aud .faq{position:absolute;right:0;left:0;top:712px;bottom:0;background:var(--navy);color:#fff;padding:36px var(--gut) 0}
+.aud .faq h3{font-family:"Noto Kufi Arabic";font-weight:700;font-size:22px;margin:0 0 22px}
+.aud .faq .g{display:grid;grid-template-columns:240px 1fr}
+.aud .faq h4{font-size:13px;font-weight:600;color:var(--gold-lt);margin-bottom:8px}
+.aud .faq .price{display:flex;align-items:flex-end;gap:12px}
+.aud .faq .price b{font-size:74px;line-height:.9;color:var(--gold-lt)}
+.aud .faq .price span{font-size:14px;line-height:1.5;padding-bottom:2px}
+.aud .faq .g>div+div{border-right:1px solid rgba(255,255,255,.2);padding-right:30px}
+.aud .faq p{font-size:14.5px;line-height:1.95;color:rgba(255,255,255,.88)}
 
 /* ======================= 4 · INVITATION ======================= */
-.inv{background:var(--ink);color:#fff}
-.inv .head{border-bottom-color:rgba(255,255,255,.18);color:rgba(255,255,255,.6)}
-.inv .head b{color:var(--sky)}
-.inv .ttl{position:absolute;top:110px;right:var(--gut);left:var(--gut)}
-.inv h1{font-family:"Noto Kufi Arabic";font-weight:800;font-size:52px;line-height:1.3}
-.inv .mark{font-family:"IBM Plex Sans Arabic";font-weight:700;font-size:40px;letter-spacing:1px;color:var(--sky);line-height:1.2}
-.inv .ttl h2{font-family:"Noto Kufi Arabic";font-weight:600;font-size:19px;margin-top:22px;padding-top:18px;border-top:1px solid rgba(255,255,255,.18)}
-.inv .lead{position:absolute;top:338px;right:var(--gut);left:var(--gut);font-size:15.5px;line-height:2;color:rgba(255,255,255,.86)}
-.inv .note{position:absolute;top:486px;right:var(--gut);left:var(--gut);border-right:4px solid var(--blue-2);background:rgba(255,255,255,.05);padding:18px 24px 18px 26px}
-.inv .note h3{font-size:16px;font-weight:700;color:var(--sky);margin-bottom:6px}
-.inv .note p{font-size:13.6px;line-height:1.9;color:rgba(255,255,255,.84)}
-.inv .reg{position:absolute;top:700px;right:0;left:0;bottom:0;background:var(--paper);color:var(--text);padding:36px var(--gut) 0;display:grid;grid-template-columns:1fr 196px;gap:40px}
-.inv .reg::before{content:"";position:absolute;top:0;right:0;width:240px;height:6px;background:var(--blue)}
-.inv .dl{border-top:2px solid var(--ink)}
-.inv .dl div{display:flex;justify-content:space-between;align-items:baseline;padding:13px 0;border-bottom:1px solid var(--rule)}
+.inv{background:var(--navy);color:#fff}
+.inv .head{border-bottom-color:rgba(255,255,255,.15);color:rgba(255,255,255,.6)}
+.inv .ttl{position:absolute;top:104px;right:var(--gut);left:var(--gut)}
+.inv h1{font-family:"Noto Kufi Arabic";font-weight:800;font-size:54px;line-height:1.35}
+.inv .mark{font-size:30px;font-weight:600;letter-spacing:5px;color:var(--gold-lt)}
+.inv .ttl h2{font-family:"Noto Kufi Arabic";font-weight:600;font-size:19px;margin-top:20px;padding-top:18px;border-top:1px solid rgba(184,149,90,.45)}
+.inv .lead{position:absolute;top:340px;right:var(--gut);left:var(--gut);font-size:15.5px;line-height:2;color:rgba(255,255,255,.86)}
+.inv .note{position:absolute;top:484px;right:var(--gut);left:var(--gut);border-right:3px solid var(--gold);padding:4px 22px 4px 0}
+.inv .note h3{font-size:16px;font-weight:700;color:var(--gold-lt);margin-bottom:6px}
+.inv .note p{font-size:13.6px;line-height:1.9;color:rgba(255,255,255,.8)}
+.inv .card{position:absolute;top:672px;right:var(--gut);left:var(--gut);height:300px;background:var(--ivory);color:var(--text);padding:28px 30px;display:grid;grid-template-columns:1fr 180px;gap:34px}
+.inv .dl{border-top:2px solid var(--navy)}
+.inv .dl div{display:flex;justify-content:space-between;align-items:baseline;padding:12px 0;border-bottom:1px solid var(--rule)}
 .inv .dl dt{font-size:13px;color:var(--muted)}
-.inv .dl dd{font-size:16px;font-weight:700;color:var(--ink);text-align:left}
-.inv .dl .hot dd{color:var(--blue)}
-.inv .reg .how{font-size:13.2px;line-height:1.85;color:var(--muted);margin-top:14px}
-.inv .qr{display:flex;flex-direction:column;align-items:center}
-.inv .qr .code{width:196px;height:196px;padding:12px;border:1px solid var(--rule)}
+.inv .dl dd{font-size:16px;font-weight:700;color:var(--navy)}
+.inv .dl .hot dt{color:var(--gold);font-weight:600}
+.inv .card .how{font-size:13px;line-height:1.85;color:var(--muted);margin-top:14px}
+.inv .qr{display:flex;flex-direction:column;align-items:center;justify-content:center}
+.inv .qr .code{width:180px;height:180px;padding:12px;background:#fff;border:1px solid var(--rule)}
 .inv .qr .code img{width:100%;height:100%;display:block}
-.inv .qr span{font-size:12.5px;font-weight:600;color:var(--ink);margin-top:9px}
+.inv .qr span{font-size:12.5px;font-weight:600;color:var(--navy);margin-top:10px}
+.inv .folio{bottom:42px}
 </style>
 </head>
 <body>
 
 <!-- ======================= 1 · COVER ======================= -->
 <section class="page cover">
-  <div class="top">
-    <div class="ids">
-      <div class="branch">فرع IEEE الطلابي في الجامعة العربية الدولية<span class="ltr">IEEE AIU Student Branch</span></div>
-      <div class="logos">
-        <img class="embs" src="assets/embs.png" alt="IEEE EMBS — Engineering in Medicine &amp; Biology Society">
-        <img class="ieee" src="assets/ieee.png" alt="IEEE">
-      </div>
+  <div class="frame"></div>
+  <div class="ids">
+    <div class="branch">فرع IEEE الطلابي في الجامعة العربية الدولية<span class="ltr">IEEE AIU STUDENT BRANCH</span></div>
+    <div class="logos">
+      <img class="embs" src="assets/embs-white.png" alt="IEEE EMBS — Engineering in Medicine &amp; Biology Society">
+      <img class="ieee" src="assets/ieee-white.png" alt="IEEE">
     </div>
-    <p class="claim">أكثر من <span>100 عام</span> من القيادة العلمية والمهنية حول العالم..<br>الآن في الجامعة العربية الدولية</p>
   </div>
 
   <div class="hero photo" role="img" aria-label="حضور في مسرح الجامعة العربية الدولية"></div>
 
-  <div class="band">
+  <div class="body">
+    <p class="claim">أكثر من 100 عام من القيادة العلمية والمهنية حول العالم.. الآن في الجامعة العربية الدولية</p>
     <h1>حفل الافتتاح الرسمي</h1>
     <div class="sub">لفرع IEEE الطلابي في الجامعة العربية الدولية</div>
-    <div class="en ltr">IEEE AIU Student Branch</div>
-    <div class="tag">بوابتك نحو المؤتمرات العالمية، البحث العلمي، وسوق العمل الدولي</div>
-    <div class="meta">
-      <div><small>الموعد</small>الأربعاء، 18 تشرين الثاني 2026</div>
-      <div><small>المكان</small>مسرح الجامعة العربية الدولية (AIU)</div>
-    </div>
+    <div class="en ltr">IEEE AIU STUDENT BRANCH</div>
+    <p class="tag">بوابتك نحو المؤتمرات العالمية، البحث العلمي، وسوق العمل الدولي</p>
+  </div>
+
+  <div class="meta">
+    <div><small>الموعد</small><b>الأربعاء، 18 تشرين الثاني 2026</b></div>
+    <div><small>المكان</small><b>مسرح الجامعة العربية الدولية (AIU)</b></div>
   </div>
 </section>
 
 <!-- ======================= 2 · ABOUT ======================= -->
 <section class="page about">
-  <div class="head"><span><b>02</b>عن المنظمة</span><img src="assets/ieee.png" alt="IEEE"></div>
+  <div class="head"><span><span class="no">02</span>عن المنظمة</span><img src="assets/ieee-navy.png" alt="IEEE"></div>
 
   <div class="intro">
     <div>
@@ -188,13 +181,13 @@ h2.h{font-family:"Noto Kufi Arabic",sans-serif;font-weight:700;font-size:34px;li
       <p>منظمة عالمية غير ربحية مقرها الولايات المتحدة، وتُعد أكبر جمعية مهنية في العالم لتطوير التكنولوجيا. تضم فروعاً في أقوى الجامعات العالمية (الأمريكية، الألمانية، السويسرية وغيرها). هدفها ربط الطالب الجامعي بأحدث الأبحاث والمؤتمرات والفرص المهنية العالمية.</p>
     </div>
     <div class="stats">
-      <div class="stat"><b>100+</b><span>عام من الريادة العالمية</span></div>
-      <div class="stat"><b>400,000+</b><span>عضو حول العالم</span></div>
+      <div class="stat"><b class="fig">100+</b><span>عام من الريادة العالمية</span></div>
+      <div class="stat"><b class="fig">400,000+</b><span>عضو حول العالم</span></div>
     </div>
   </div>
 
   <div class="fields">
-    <div class="row"><h3>IEEE يجمع تخصصات الجامعة</h3></div>
+    <h3>IEEE يجمع تخصصات الجامعة</h3>
     <div class="grid4">
       <div class="fac">
         <div class="photo" style="background-image:url(assets/fac-pharmacy.jpg)" role="img" aria-label="مخابر كلية الصيدلة"></div>
@@ -222,8 +215,8 @@ h2.h{font-family:"Noto Kufi Arabic",sans-serif;font-weight:700;font-size:34px;li
   <div class="how">
     <h2 class="h">كيف تستفيد عملياً؟</h2>
     <div class="two">
-      <div><span class="n">01</span><div><h4>أنشطة دولية مشتركة</h4><p>حضور ورشات وفعاليات أونلاين تنظمها الجامعات الشريكة في أمريكا وألمانيا وسويسرا والاستفادة من خبراتهم.</p></div></div>
-      <div><span class="n">02</span><div><h4>مبادرات تقودها أنت</h4><p>أي ورشة أو تدريب تقترحه أنت وزملاؤك نتكفل بدعمه وتنظيمه داخل الجامعة، مع إمكانية استضافة خبراء من داخل سوريا وخارجها.</p></div></div>
+      <div><span class="n fig">01</span><div><h4>أنشطة دولية مشتركة</h4><p>حضور ورشات وفعاليات أونلاين تنظمها الجامعات الشريكة في أمريكا وألمانيا وسويسرا والاستفادة من خبراتهم.</p></div></div>
+      <div><span class="n fig">02</span><div><h4>مبادرات تقودها أنت</h4><p>أي ورشة أو تدريب تقترحه أنت وزملاؤك نتكفل بدعمه وتنظيمه داخل الجامعة، مع إمكانية استضافة خبراء من داخل سوريا وخارجها.</p></div></div>
     </div>
     <div class="perks">دعم بحثي ومكتبة IEEE Xplore<i></i>مسابقات وجوائز وسفر</div>
   </div>
@@ -232,14 +225,14 @@ h2.h{font-family:"Noto Kufi Arabic",sans-serif;font-weight:700;font-size:34px;li
 </section>
 
 <!-- ======================= 3 · AUDIENCE ======================= -->
-<section class="page aud">
-  <div class="head"><span><b>03</b>عن الفئات المستهدفة</span><img src="assets/ieee.png" alt="IEEE"></div>
+<section class="page aud on-navy">
+  <div class="head"><span><span class="no">03</span>عن الفئات المستهدفة</span><img src="assets/ieee-navy.png" alt="IEEE"></div>
 
   <div class="top"><h2 class="h">ماذا ستستفيد حسب خطتك المستقبلية؟</h2></div>
 
   <div class="cols">
     <div class="col">
-      <div class="num">01</div>
+      <div class="num fig">01</div>
       <h3>طلاب الماجستير<br>والبحث العلمي</h3>
       <ul>
         <li>ثقل أكاديمي كبير في ملف المنح والقبول الجامعي.</li>
@@ -248,7 +241,7 @@ h2.h{font-family:"Noto Kufi Arabic",sans-serif;font-weight:700;font-size:34px;li
       </ul>
     </div>
     <div class="col">
-      <div class="num">02</div>
+      <div class="num fig">02</div>
       <h3>طلاب سوق العمل<br>(المحلي والخارجي)</h3>
       <ul>
         <li>تشبيك مباشر مع الشركات خلال المؤتمرات يفتح أبواب التدريب والتوظيف.</li>
@@ -257,7 +250,7 @@ h2.h{font-family:"Noto Kufi Arabic",sans-serif;font-weight:700;font-size:34px;li
       </ul>
     </div>
     <div class="col">
-      <div class="num">03</div>
+      <div class="num fig">03</div>
       <h3>مرحلة اكتشاف<br>الشغف والتجربة</h3>
       <ul>
         <li>بيئة عملية تتجاوز التطوع التقليدي لتمنحك تجربة حقيقية في تحويل أفكارك إلى فعاليات واقعية.</li>
@@ -267,12 +260,11 @@ h2.h{font-family:"Noto Kufi Arabic",sans-serif;font-weight:700;font-size:34px;li
   </div>
 
   <div class="faq">
-    <span class="bar"></span>
     <h3>سؤالان يدوران في ذهنك</h3>
     <div class="g">
       <div>
         <h4>الاشتراك الشهري</h4>
-        <div class="price"><b>200</b><span>ليرة سورية جديدة<br>شهرياً فقط.</span></div>
+        <div class="price"><b class="fig">200</b><span>ليرة سورية جديدة<br>شهرياً فقط.</span></div>
       </div>
       <div>
         <h4>مرونة الالتزام بالوقت</h4>
@@ -285,8 +277,9 @@ h2.h{font-family:"Noto Kufi Arabic",sans-serif;font-weight:700;font-size:34px;li
 </section>
 
 <!-- ======================= 4 · INVITATION ======================= -->
-<section class="page inv">
-  <div class="head"><span><b>04</b>خاتمة ودعوة</span><img src="assets/ieee-white.png" alt="IEEE"></div>
+<section class="page inv on-navy">
+  <div class="frame"></div>
+  <div class="head"><span><span class="no">04</span>خاتمة ودعوة</span><img src="assets/ieee-white.png" alt="IEEE"></div>
 
   <div class="ttl">
     <h1>حفل الافتتاح الرسمي</h1>
@@ -301,7 +294,7 @@ h2.h{font-family:"Noto Kufi Arabic",sans-serif;font-weight:700;font-size:34px;li
     <p>يرجى التسجيل فقط في حال التأكد من القدرة على الحضور والالتزام بذلك، حيث يُعد التسجيل تأكيداً رسمياً للحضور، ويتم بناءً عليه تنظيم قوائم المشاركين والترتيبات الخاصة بالحفل.<br>تسجيلكم وعدم الحضور يعني فقدان فرصة التسجيل في فعاليات لاحقة ويحرم آخرين من المشاركة بسبب عدد المقاعد المحدودة.</p>
   </div>
 
-  <div class="reg">
+  <div class="card">
     <div>
       <dl class="dl">
         <div class="hot"><dt>آخر موعد للتسجيل</dt><dd>الخميس 5 تشرين الثاني 2026</dd></div>
@@ -315,7 +308,6 @@ h2.h{font-family:"Noto Kufi Arabic",sans-serif;font-weight:700;font-size:34px;li
       <span>امسح الرمز للتسجيل</span>
     </div>
   </div>
-  <div class="folio"><span>الأربعاء، 18 تشرين الثاني 2026 | مسرح الجامعة العربية الدولية (AIU)</span><span class="ltr">IEEE AIU Student Branch | 04</span></div>
 </section>
 
 </body>
