@@ -1,0 +1,418 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>IEEE AIU Opening</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&family=Readex+Pro:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy-950:#060f1f;
+  --navy-900:#0a1930;
+  --navy-800:#10264a;
+  --navy-700:#1a3766;
+  --gold:#c9a85c;
+  --gold-soft:#e3cd96;
+  --gold-deep:#a8863e;
+  --sky:#7cc4ee;
+  --teal:#0e7c86;
+  --ink:#0d1b2e;
+  --ink-2:#3d4b60;
+  --ink-3:#6b7789;
+  --paper:#ffffff;
+  --paper-2:#f6f3ec;
+  --line:#e7e1d3;
+}
+@page{size:600pt 804pt;margin:0}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{background:#d9d6cf}
+body{font-family:"IBM Plex Sans Arabic",system-ui,sans-serif;color:var(--ink);-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.page{width:800px;height:1072px;position:relative;overflow:hidden;margin:24px auto;background:var(--paper);box-shadow:0 10px 40px rgba(0,0,0,.18)}
+@media print{html,body{background:none}.page{margin:0;box-shadow:none;page-break-after:always;break-after:page}}
+.display{font-family:"Readex Pro","IBM Plex Sans Arabic",sans-serif}
+.latin{font-family:"Readex Pro",sans-serif;direction:ltr;unicode-bidi:isolate}
+svg.i{width:22px;height:22px;stroke:currentColor;fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;flex:none}
+
+/* ---------- running header / footer ---------- */
+.run{position:absolute;top:34px;left:56px;right:56px;display:flex;justify-content:space-between;align-items:center;font-size:12px;letter-spacing:.2px;color:var(--ink-3)}
+.run .sec{display:flex;align-items:center;gap:10px}
+.run .num{font-family:"Readex Pro",sans-serif;font-weight:600;color:var(--gold-deep);font-size:13px}
+.run .bar{width:28px;height:1px;background:var(--gold)}
+.run img{height:22px}
+.dark .run{color:rgba(255,255,255,.6)}
+.dark .run .num{color:var(--gold)}
+.foot{position:absolute;bottom:0;left:0;right:0;height:58px;background:var(--navy-900);color:#fff;display:flex;align-items:center;justify-content:space-between;padding:0 56px;font-size:13px}
+.foot .meta{display:flex;align-items:center;gap:22px}
+.foot .meta span{display:flex;align-items:center;gap:8px}
+.foot .meta svg{color:var(--gold);width:17px;height:17px}
+.foot .brand{font-family:"IBM Plex Sans Arabic","Readex Pro",sans-serif;font-size:12px;letter-spacing:.5px;color:rgba(255,255,255,.6)}
+
+.eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:13px;font-weight:600;color:var(--gold-deep);letter-spacing:.2px}
+.eyebrow::before{content:"";width:22px;height:2px;background:var(--gold)}
+h2.title{font-family:"IBM Plex Sans Arabic","Readex Pro",sans-serif;font-weight:700;font-size:36px;line-height:1.25;color:var(--navy-900);letter-spacing:-.3px}
+
+/* ================= PAGE 1 — COVER ================= */
+.cover{background:var(--navy-900);color:#fff}
+.cover .photo{position:absolute;inset:0 0 auto 0;height:690px;background:url(assets/auditorium.jpg) center 40%/cover}
+.cover .photo::after{content:"";position:absolute;inset:0;background:
+  linear-gradient(180deg,rgba(6,15,31,.92) 0%,rgba(6,15,31,.55) 26%,rgba(10,25,48,.25) 48%,rgba(10,25,48,.75) 78%,var(--navy-900) 100%)}
+.cover .grid-deco{position:absolute;inset:0;background-image:radial-gradient(rgba(201,168,92,.18) 1px,transparent 1px);background-size:22px 22px;mask-image:linear-gradient(180deg,transparent 60%,#000 85%);-webkit-mask-image:linear-gradient(180deg,transparent 60%,#000 85%)}
+.cover header{position:absolute;top:40px;left:56px;right:56px;display:flex;justify-content:space-between;align-items:center}
+.cover .branch{text-align:right}
+.cover .branch b{display:block;font-weight:600;font-size:17px}
+.cover .branch span{font-family:"IBM Plex Sans Arabic","Readex Pro",sans-serif;font-size:13px;color:var(--gold-soft);letter-spacing:.6px}
+.cover .logos{display:flex;align-items:center;gap:18px}
+.cover .logos .ieee{height:42px}
+.cover .logos .chip{background:#fff;border-radius:10px;padding:7px 12px;display:flex}
+.cover .logos .chip img{height:26px}
+.cover .lead{position:absolute;top:150px;right:56px;max-width:660px}
+.cover .lead p{font-family:"IBM Plex Sans Arabic","Readex Pro",sans-serif;font-size:28px;font-weight:500;line-height:1.55;text-shadow:0 2px 18px rgba(0,0,0,.45)}
+.cover .lead p em{font-style:normal;color:var(--gold-soft)}
+.cover .lead .rule{margin-top:18px;width:64px;height:3px;background:var(--gold);border-radius:2px}
+
+.cover .body{position:absolute;right:56px;left:56px;top:640px}
+.cover .badge{display:inline-flex;align-items:center;gap:10px;border:1px solid rgba(201,168,92,.55);color:var(--gold-soft);padding:7px 16px;border-radius:40px;font-size:13px;font-weight:500;background:rgba(10,25,48,.55);backdrop-filter:blur(4px)}
+.cover .badge i{width:7px;height:7px;border-radius:50%;background:var(--gold);box-shadow:0 0 0 4px rgba(201,168,92,.2)}
+.cover h1{font-family:"IBM Plex Sans Arabic","Readex Pro",sans-serif;font-weight:700;font-size:70px;line-height:1.25;margin-top:14px;background:linear-gradient(180deg,#f1dfae 0%,var(--gold) 55%,#b08f45 100%);-webkit-background-clip:text;background-clip:text;color:transparent;letter-spacing:-1px;padding-bottom:.22em;margin-bottom:-.22em}
+.cover .sub{font-size:23px;font-weight:500;margin-top:6px;color:#fff}
+.cover .en{font-family:"Readex Pro",sans-serif;font-size:30px;font-weight:600;color:var(--sky);margin-top:6px;direction:ltr;text-align:right;letter-spacing:.2px}
+.cover .tag{margin-top:16px;font-size:17px;color:rgba(255,255,255,.78);display:flex;align-items:center;gap:10px}
+.cover .tag::before{content:"";width:3px;height:22px;background:var(--gold);border-radius:2px}
+.cover .info{position:absolute;bottom:44px;left:56px;right:56px;display:grid;grid-template-columns:1fr 1fr;border:1px solid rgba(201,168,92,.4);border-radius:16px;background:linear-gradient(135deg,rgba(26,55,102,.55),rgba(10,25,48,.4));overflow:hidden}
+.cover .info div{display:flex;align-items:center;gap:14px;padding:18px 24px}
+.cover .info div+div{border-right:1px solid rgba(201,168,92,.3)}
+.cover .info .ic{width:44px;height:44px;border-radius:12px;background:rgba(201,168,92,.14);display:grid;place-items:center;color:var(--gold)}
+.cover .info small{display:block;font-size:12px;color:rgba(255,255,255,.55);margin-bottom:2px}
+.cover .info b{font-weight:600;font-size:16px}
+
+/* ================= PAGE 2 — ABOUT ================= */
+.about .intro{position:absolute;top:88px;right:56px;left:56px;display:grid;grid-template-columns:1fr 230px;gap:40px;align-items:start}
+.about .intro p{font-size:16.5px;line-height:1.95;color:var(--ink-2);margin-top:14px}
+.about .stats{display:flex;flex-direction:column;gap:14px;margin-top:6px}
+.stat{background:var(--navy-900);color:#fff;border-radius:16px;padding:18px 22px;position:relative;overflow:hidden}
+.stat::after{content:"";position:absolute;left:-30px;bottom:-30px;width:110px;height:110px;border-radius:50%;border:1px solid rgba(201,168,92,.25)}
+.stat b{font-family:"Readex Pro",sans-serif;font-weight:600;font-size:40px;line-height:1.1;color:var(--gold);display:block;direction:ltr;text-align:right}
+.stat span{font-size:14.5px;color:rgba(255,255,255,.8)}
+
+.about .fields{position:absolute;top:356px;right:56px;left:56px;height:352px;border-radius:20px;background:linear-gradient(135deg,#0b5d66 0%,var(--teal) 55%,#12909a 100%);color:#fff;display:grid;grid-template-columns:1fr 168px;overflow:hidden}
+.about .fields .txt{padding:22px 26px 22px 16px}
+.about .fields h3{font-family:"IBM Plex Sans Arabic","Readex Pro",sans-serif;font-weight:600;font-size:23px;margin-bottom:14px;display:flex;align-items:center;gap:10px}
+.about .fields h3 .latin{color:var(--gold-soft)}
+.about .fgrid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.about .f{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);border-radius:12px;padding:11px 13px}
+.about .f h4{font-size:14px;white-space:nowrap;font-weight:600;display:flex;align-items:center;gap:8px;margin-bottom:4px;color:#fff}
+.about .f h4 svg{width:18px;height:18px;color:var(--gold-soft)}
+.about .f p{font-size:12.3px;line-height:1.7;color:rgba(255,255,255,.85)}
+.about .fields .ph{background:url(assets/lab.jpg) center/cover;position:relative}
+.about .fields .ph::after{content:"";position:absolute;inset:0;background:linear-gradient(270deg,rgba(14,124,134,0) 50%,rgba(14,124,134,.95) 100%)}
+
+.about .how{position:absolute;top:726px;right:56px;left:56px}
+.about .how .head{display:flex;justify-content:space-between;align-items:end;margin-bottom:12px}
+.about .how h2{font-size:30px}
+.about .cards{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.card{border:1px solid var(--line);border-radius:16px;padding:16px 20px 14px;background:var(--paper);position:relative}
+.card .ic{width:36px;height:36px;border-radius:10px;background:var(--paper-2);color:var(--gold-deep);display:grid;place-items:center}
+.card .hd{display:flex;align-items:center;gap:12px;margin-bottom:6px}
+.card h4{font-family:"IBM Plex Sans Arabic","Readex Pro",sans-serif;font-weight:600;font-size:18px;color:var(--teal)}
+.card p{font-size:13.8px;line-height:1.8;color:var(--ink-2)}
+.about .perks{display:flex;gap:12px;margin-top:14px;justify-content:center}
+.pill{display:inline-flex;align-items:center;gap:9px;padding:9px 18px;border-radius:40px;background:var(--paper-2);border:1px solid var(--line);font-weight:600;font-size:14.5px;color:var(--navy-900)}
+.pill svg{width:18px;height:18px;color:var(--gold-deep)}
+
+/* ================= PAGE 3 — AUDIENCE ================= */
+.aud .top{position:absolute;top:92px;right:56px;left:56px}
+.aud .cols{position:absolute;top:196px;right:56px;left:56px;display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.col{border-radius:18px;background:var(--paper-2);padding:24px 20px 22px;position:relative;border:1px solid var(--line);height:488px}
+.col .n{font-family:"Readex Pro",sans-serif;font-weight:700;font-size:48px;line-height:1;color:transparent;-webkit-text-stroke:1.2px var(--gold);position:absolute;top:18px;left:20px}
+.col .ic{width:50px;height:50px;border-radius:14px;background:var(--navy-900);color:var(--gold);display:grid;place-items:center;margin-bottom:16px}
+.col .ic svg{width:24px;height:24px}
+.col h3{font-family:"IBM Plex Sans Arabic","Readex Pro",sans-serif;font-weight:600;font-size:19.5px;line-height:1.45;color:var(--navy-900);min-height:58px}
+.col .rule{height:2px;background:linear-gradient(270deg,var(--gold),transparent);margin:14px 0 14px}
+.col ul{list-style:none;display:flex;flex-direction:column;gap:11px}
+.col li{font-size:13.8px;line-height:1.78;color:var(--ink-2);padding-right:18px;position:relative}
+.col li::before{content:"";position:absolute;right:0;top:10px;width:7px;height:7px;border-radius:2px;background:var(--gold);transform:rotate(45deg)}
+.col li b{color:var(--navy-900);font-weight:600}
+
+.aud .faq{position:absolute;top:708px;right:56px;left:56px;height:262px;border-radius:20px;background:var(--navy-900);color:#fff;padding:26px 30px;overflow:hidden}
+.aud .faq::before{content:"؟";position:absolute;left:24px;top:-40px;font-family:"IBM Plex Sans Arabic","Readex Pro",sans-serif;font-weight:700;font-size:220px;color:rgba(201,168,92,.08);line-height:1}
+.aud .faq h3{font-family:"IBM Plex Sans Arabic","Readex Pro",sans-serif;font-size:24px;font-weight:600;color:var(--gold);margin-bottom:18px;display:flex;align-items:center;gap:10px}
+.aud .faq .q{display:grid;grid-template-columns:230px 1fr;gap:20px}
+.aud .qa{border-radius:14px;padding:16px 18px;background:rgba(255,255,255,.05);border:1px solid rgba(201,168,92,.25);position:relative}
+.aud .qa h4{font-family:"IBM Plex Sans Arabic","Readex Pro",sans-serif;font-weight:600;font-size:16.5px;color:var(--gold-soft);margin-bottom:8px;display:flex;align-items:center;gap:8px}
+.aud .qa h4 svg{width:18px;height:18px}
+.aud .qa p{font-size:14px;line-height:1.85;color:rgba(255,255,255,.85)}
+.aud .price{display:flex;align-items:baseline;gap:8px;margin:2px 0 2px}
+.aud .price b{font-family:"Readex Pro",sans-serif;font-weight:700;font-size:48px;color:#fff;line-height:1.1}
+.aud .price span{font-size:14px;color:rgba(255,255,255,.85);line-height:1.4}
+.aud .pfoot{font-size:13px;color:var(--gold-soft)}
+.simplefoot{position:absolute;bottom:32px;left:56px;right:56px;display:flex;justify-content:space-between;align-items:center;font-size:12px;color:var(--ink-3);border-top:1px solid var(--line);padding-top:14px}
+.simplefoot .latin{letter-spacing:.4px}
+
+/* ================= PAGE 4 — INVITATION ================= */
+.inv{background:var(--navy-900);color:#fff}
+.inv .bg{position:absolute;inset:0;background:
+  radial-gradient(600px 400px at 85% 8%,rgba(201,168,92,.16),transparent 70%),
+  radial-gradient(500px 500px at 0% 100%,rgba(124,196,238,.10),transparent 70%)}
+.inv .rings{position:absolute;left:-200px;top:-200px;width:480px;height:480px;border-radius:50%;border:1px solid rgba(201,168,92,.22);}
+.inv .rings::before,.inv .rings::after{content:"";position:absolute;border-radius:50%;border:1px solid rgba(201,168,92,.12)}
+.inv .rings::before{inset:-70px}
+.inv .rings::after{inset:-150px;border-color:rgba(201,168,92,.07)}
+.inv .hero{position:absolute;top:110px;right:56px;left:56px;text-align:center}
+.inv .hero .eyebrow{color:var(--gold)}
+.inv .hero .eyebrow::after{content:"";width:22px;height:2px;background:var(--gold)}
+.inv h1{font-family:"IBM Plex Sans Arabic","Readex Pro",sans-serif;font-weight:700;font-size:58px;line-height:1.2;margin-top:14px;background:linear-gradient(180deg,#f1dfae,var(--gold) 60%,#b08f45);-webkit-background-clip:text;background-clip:text;color:transparent;padding-bottom:.2em;margin-bottom:-.2em}
+.inv .mark{font-family:"Readex Pro",sans-serif;font-weight:700;font-size:46px;letter-spacing:2px;margin-top:2px;direction:ltr}
+.inv .hero h2{font-family:"IBM Plex Sans Arabic","Readex Pro",sans-serif;font-weight:500;font-size:21px;color:var(--gold-soft);margin-top:14px}
+.inv .lead{position:absolute;top:400px;right:72px;left:72px;text-align:center;font-size:17px;line-height:2;color:rgba(255,255,255,.85)}
+.inv .notice{position:absolute;top:548px;right:56px;left:56px;border-radius:18px;background:rgba(255,255,255,.04);border:1px solid rgba(201,168,92,.35);padding:22px 26px 22px 26px;display:grid;grid-template-columns:52px 1fr;gap:18px}
+.inv .notice .ic{width:52px;height:52px;border-radius:14px;background:rgba(201,168,92,.14);color:var(--gold);display:grid;place-items:center}
+.inv .notice .ic svg{width:26px;height:26px}
+.inv .notice h3{font-family:"IBM Plex Sans Arabic","Readex Pro",sans-serif;font-weight:600;font-size:20px;color:var(--gold);margin-bottom:6px}
+.inv .notice p{font-size:14.2px;line-height:1.95;color:rgba(255,255,255,.82)}
+.inv .dates{position:absolute;top:790px;right:56px;left:56px;display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.inv .d{border-radius:18px;padding:20px 22px;display:flex;gap:16px;align-items:center}
+.inv .d.deadline{background:linear-gradient(135deg,#e2c983,var(--gold) 60%,#b8944a);color:var(--navy-950)}
+.inv .d.event{background:var(--navy-800);border:1px solid rgba(255,255,255,.1)}
+.inv .d .ic{width:50px;height:50px;border-radius:14px;display:grid;place-items:center;flex:none}
+.inv .d.deadline .ic{background:rgba(10,25,48,.12)}
+.inv .d.event .ic{background:rgba(201,168,92,.14);color:var(--gold)}
+.inv .d .ic svg{width:24px;height:24px}
+.inv .d small{display:block;font-size:13px;font-weight:600;opacity:.75;margin-bottom:3px}
+.inv .d b{font-family:"IBM Plex Sans Arabic","Readex Pro",sans-serif;font-weight:600;font-size:16.5px;white-space:nowrap;line-height:1.45;display:block}
+.inv .reg{position:absolute;bottom:52px;right:56px;left:56px;display:flex;align-items:center;justify-content:center;gap:14px;font-size:14.5px;color:rgba(255,255,255,.78);text-align:center;line-height:1.8}
+.inv .reg .ic{width:42px;height:42px;border-radius:12px;border:1px dashed rgba(201,168,92,.6);display:grid;place-items:center;color:var(--gold);flex:none}
+.inv .sig{position:absolute;bottom:0;left:0;right:0;height:6px;background:linear-gradient(90deg,var(--gold-deep),var(--gold-soft),var(--gold-deep))}
+</style>
+</head>
+<body>
+
+<!-- ======================= PAGE 1 ======================= -->
+<section class="page cover">
+  <div class="photo"></div>
+  <div class="grid-deco"></div>
+
+  <header>
+    <div class="branch">
+      <b>فرع IEEE الطلابي في الجامعة العربية الدولية</b>
+      <span class="latin">IEEE AIU Student Branch</span>
+    </div>
+    <div class="logos">
+      <span class="chip"><img src="assets/embs.png" alt="IEEE EMBS — Engineering in Medicine &amp; Biology Society"></span>
+      <img class="ieee" src="assets/ieee-white.png" alt="IEEE">
+    </div>
+  </header>
+
+  <div class="lead">
+    <p>أكثر من <em>100 عام</em> من القيادة العلمية والمهنية حول العالم..<br>الآن في الجامعة العربية الدولية</p>
+    <div class="rule"></div>
+  </div>
+
+  <div class="body">
+    <span class="badge"><i></i>دعوة خاصة</span>
+    <h1>حفل الافتتاح الرسمي</h1>
+    <div class="sub">لفرع IEEE الطلابي في الجامعة العربية الدولية</div>
+    <div class="en">IEEE AIU Student Branch</div>
+    <div class="tag">بوابتك نحو المؤتمرات العالمية، البحث العلمي، وسوق العمل الدولي</div>
+  </div>
+
+  <div class="info">
+    <div>
+      <span class="ic"><svg class="i" viewBox="0 0 24 24"><rect x="3" y="4.5" width="18" height="16" rx="2.5"/><path d="M3 9.5h18M8 2.5v4M16 2.5v4"/><path d="M8 14h2M14 14h2M8 17.5h2"/></svg></span>
+      <div style="padding:0"><small>الموعد</small><b>الأربعاء، 18 تشرين الثاني 2026</b></div>
+    </div>
+    <div>
+      <span class="ic"><svg class="i" viewBox="0 0 24 24"><path d="M12 21s-7-6.1-7-11.5a7 7 0 0 1 14 0C19 14.9 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.6"/></svg></span>
+      <div style="padding:0"><small>المكان</small><b>مسرح الجامعة العربية الدولية (AIU)</b></div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= PAGE 2 ======================= -->
+<section class="page about">
+  <div class="run">
+    <div class="sec"><span class="num">02</span><span class="bar"></span><span>عن المنظمة</span></div>
+    <img src="assets/ieee.png" alt="IEEE">
+  </div>
+
+  <div class="intro">
+    <div>
+      <span class="eyebrow">تعرّف إلينا</span>
+      <h2 class="title" style="margin-top:8px">ما هي منظمة IEEE؟</h2>
+      <p>منظمة عالمية غير ربحية مقرها الولايات المتحدة، وتُعد أكبر جمعية مهنية في العالم لتطوير التكنولوجيا. تضم فروعاً في أقوى الجامعات العالمية (الأمريكية، الألمانية، السويسرية وغيرها). هدفها ربط الطالب الجامعي بأحدث الأبحاث والمؤتمرات والفرص المهنية العالمية.</p>
+    </div>
+    <div class="stats">
+      <div class="stat"><b>100+</b><span>عام من الريادة العالمية</span></div>
+      <div class="stat"><b>400,000+</b><span>عضو حول العالم</span></div>
+    </div>
+  </div>
+
+  <div class="fields">
+    <div class="txt">
+      <h3><span class="latin">IEEE</span> يجمع تخصصات الجامعة</h3>
+      <div class="fgrid">
+        <div class="f">
+          <h4><svg class="i" viewBox="0 0 24 24"><path d="M10.5 3.5h3M12 3.5v5.2L6.4 18.2A1.8 1.8 0 0 0 8 21h8a1.8 1.8 0 0 0 1.6-2.8L12 8.7"/><path d="M8.2 15h7.6"/></svg>الصيدلة والعلوم الطبية EMBS</h4>
+          <p>دعم الأبحاث الدوائية والتكنولوجيا الحيوية، والتعرّف إلى تطبيقات الهندسة الطبية والمؤتمرات العلمية.</p>
+        </div>
+        <div class="f">
+          <h4><svg class="i" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4M9.5 8.5 7.5 10l2 1.5M14.5 8.5l2 1.5-2 1.5"/></svg>تكنولوجيا المعلومات (IT)</h4>
+          <p>المساهمة في التحول الرقمي، وتطوير البرمجيات والمواقع، وإدارة الأنظمة والشبكات، ودعم الحلول التقنية والفعاليات الرقمية للفرع.</p>
+        </div>
+        <div class="f">
+          <h4><svg class="i" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 2.5v3M12 18.5v3M2.5 12h3M18.5 12h3M5.3 5.3l2.1 2.1M16.6 16.6l2.1 2.1M5.3 18.7l2.1-2.1M16.6 7.4l2.1-2.1"/></svg>الهندسات</h4>
+          <p>مشاريع تطبيقية وابتكار وتصميم، وربط المعرفة الهندسية بالتحديات الواقعية والعمل متعدد الاختصاصات.</p>
+        </div>
+        <div class="f">
+          <h4><svg class="i" viewBox="0 0 24 24"><path d="M7.5 3.5c-2.2 0-3.5 1.8-3.5 4.3 0 2.2.9 3.3 1.4 5.2.6 2.3.7 7.5 2.6 7.5 1.6 0 1.5-4.5 2.3-6 .4-.8 1-.8 1.4 0 .8 1.5.7 6 2.3 6 1.9 0 2-5.2 2.6-7.5.5-1.9 1.4-3 1.4-5.2 0-2.5-1.3-4.3-3.5-4.3-1.8 0-2.6 1-4.5 1s-2.7-1-4.5-1z"/></svg>طب الأسنان</h4>
+          <p>استكشاف التقنيات الرقمية في التشخيص والعلاج والتصوير الطبي، والبحث والابتكار في صحة الفم والأسنان.</p>
+        </div>
+      </div>
+    </div>
+    <div class="ph" role="img" aria-label="طلاب في مختبر علمي"></div>
+  </div>
+
+  <div class="how">
+    <div class="head">
+      <h2 class="title">كيف تستفيد عملياً؟</h2>
+    </div>
+    <div class="cards">
+      <div class="card">
+        <div class="hd"><span class="ic"><svg class="i" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3z"/></svg></span><h4>أنشطة دولية مشتركة</h4></div>
+        <p>حضور ورشات وفعاليات أونلاين تنظمها الجامعات الشريكة في أمريكا وألمانيا وسويسرا والاستفادة من خبراتهم.</p>
+      </div>
+      <div class="card">
+        <div class="hd"><span class="ic"><svg class="i" viewBox="0 0 24 24"><path d="M9 18h6M10 21h4"/><path d="M12 3a6 6 0 0 0-3.6 10.8c.7.5 1.1 1.3 1.1 2.2h5c0-.9.4-1.7 1.1-2.2A6 6 0 0 0 12 3z"/></svg></span><h4>مبادرات تقودها أنت</h4></div>
+        <p>أي ورشة أو تدريب تقترحه أنت وزملاؤك نتكفل بدعمه وتنظيمه داخل الجامعة، مع إمكانية استضافة خبراء من داخل سوريا وخارجها.</p>
+      </div>
+    </div>
+    <div class="perks">
+      <span class="pill"><svg class="i" viewBox="0 0 24 24"><path d="M4 5.5A1.5 1.5 0 0 1 5.5 4H10a2 2 0 0 1 2 2v14a2 2 0 0 0-2-2H4z"/><path d="M20 5.5A1.5 1.5 0 0 0 18.5 4H14a2 2 0 0 0-2 2v14a2 2 0 0 1 2-2h6z"/></svg>دعم بحثي ومكتبة <span class="latin">IEEE Xplore</span></span>
+      <span class="pill"><svg class="i" viewBox="0 0 24 24"><path d="M8 21h8M12 17v4M7 4h10v5a5 5 0 0 1-10 0z"/><path d="M7 6H4.5v1.5A3.5 3.5 0 0 0 7 11M17 6h2.5v1.5A3.5 3.5 0 0 1 17 11"/></svg>مسابقات وجوائز وسفر</span>
+    </div>
+  </div>
+
+  <div class="foot">
+    <div class="meta">
+      <span><svg class="i" viewBox="0 0 24 24"><rect x="3" y="4.5" width="18" height="16" rx="2.5"/><path d="M3 9.5h18M8 2.5v4M16 2.5v4"/></svg>الأربعاء، 18 تشرين الثاني 2026</span>
+      <span><svg class="i" viewBox="0 0 24 24"><path d="M12 21s-7-6.1-7-11.5a7 7 0 0 1 14 0C19 14.9 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.6"/></svg>مسرح الجامعة العربية الدولية (AIU)</span>
+    </div>
+    <span class="brand latin">IEEE AIU Student Branch</span>
+  </div>
+</section>
+
+<!-- ======================= PAGE 3 ======================= -->
+<section class="page aud">
+  <div class="run">
+    <div class="sec"><span class="num">03</span><span class="bar"></span><span>عن الفئات المستهدفة</span></div>
+    <img src="assets/ieee.png" alt="IEEE">
+  </div>
+
+  <div class="top">
+    <span class="eyebrow">لكل طالب طريق</span>
+    <h2 class="title" style="margin-top:8px">ماذا ستستفيد حسب خطتك المستقبلية؟</h2>
+  </div>
+
+  <div class="cols">
+    <div class="col">
+      <span class="n">01</span>
+      <span class="ic"><svg class="i" viewBox="0 0 24 24"><path d="M2.5 9 12 4.5 21.5 9 12 13.5z"/><path d="M6.5 11v5c1.5 1.6 3.5 2.4 5.5 2.4s4-.8 5.5-2.4v-5M21.5 9v5.5"/></svg></span>
+      <h3>طلاب الماجستير<br>والبحث العلمي</h3>
+      <div class="rule"></div>
+      <ul>
+        <li>ثقل أكاديمي كبير في ملف المنح والقبول الجامعي.</li>
+        <li>علاقات مباشرة مع دكاترة وباحثين تفتح باب رسائل التوصية <span style="white-space:nowrap"><span class="latin" style="font-size:12.6px">(Recommendation Letters)</span>.</span></li>
+        <li>إنجاز أبحاث ومشاريع تخرج استثنائية عبر <span class="latin">IEEE Xplore</span>، بإشراف مختصين محليين ودوليين.</li>
+      </ul>
+    </div>
+    <div class="col">
+      <span class="n">02</span>
+      <span class="ic"><svg class="i" viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="2.5"/><path d="M8.5 7V5.5A1.5 1.5 0 0 1 10 4h4a1.5 1.5 0 0 1 1.5 1.5V7M3 12.5h18M11 12.5v2h2v-2"/></svg></span>
+      <h3>طلاب سوق العمل<br>(المحلي والخارجي)</h3>
+      <div class="rule"></div>
+      <ul>
+        <li>تشبيك مباشر مع الشركات خلال المؤتمرات يفتح أبواب التدريب والتوظيف.</li>
+        <li>بناء مهارات القيادة وإدارة الفرق المطلوبة لأي منصب <span class="latin">Supervisor</span> أو <span class="latin">Manager</span>.</li>
+        <li><b>ميزة تنافسية في الـ <span class="latin">CV</span>:</b> خبرة تطوعية في منظمة عالمية وتنظيم مؤتمرات على مستوى سوريا.</li>
+      </ul>
+    </div>
+    <div class="col">
+      <span class="n">03</span>
+      <span class="ic"><svg class="i" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m15.5 8.5-2 5-5 2 2-5z"/></svg></span>
+      <h3>مرحلة اكتشاف<br>الشغف والتجربة</h3>
+      <div class="rule"></div>
+      <ul>
+        <li>بيئة عملية تتجاوز التطوع التقليدي لتمنحك تجربة حقيقية في تحويل أفكارك إلى فعاليات واقعية.</li>
+        <li>تجربة تقديم العروض، بناء العلاقات، واكتشاف مجالك المهني المفضل بالتجربة المباشرة.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="faq">
+    <h3>سؤالان يدوران في ذهنك</h3>
+    <div class="q">
+      <div class="qa">
+        <h4><svg class="i" viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="12" rx="2.5"/><circle cx="12" cy="12" r="2.5"/><path d="M6.5 9.5v5M17.5 9.5v5"/></svg>الاشتراك الشهري</h4>
+        <div class="price"><b>200</b><span>ليرة سورية<br>جديدة</span></div>
+        <div class="pfoot">شهرياً فقط.</div>
+      </div>
+      <div class="qa">
+        <h4><svg class="i" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>مرونة الالتزام بالوقت</h4>
+        <p>لا توجد ساعات إجبارية، لا تُلغى عضويتك أبداً بسبب ضغط الدراسة؛ يمكنك الاكتفاء بحمل لقب <span class="latin">IEEE Member</span> في سيرتك الذاتية والمشاركة في الفعاليات متى سمح وقتك.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="simplefoot">
+    <span>الأربعاء، 18 تشرين الثاني 2026 · مسرح الجامعة العربية الدولية (AIU)</span>
+    <span class="latin">IEEE AIU Student Branch | 03</span>
+  </div>
+</section>
+
+<!-- ======================= PAGE 4 ======================= -->
+<section class="page inv dark">
+  <div class="bg"></div>
+  <div class="rings"></div>
+  <div class="run">
+    <div class="sec"><span class="num">04</span><span class="bar"></span><span>خاتمة ودعوة</span></div>
+    <img src="assets/ieee-white.png" alt="IEEE">
+  </div>
+
+  <div class="hero">
+    <span class="eyebrow">أنت مدعو</span>
+    <h1>حفل الافتتاح الرسمي</h1>
+    <div class="mark">IEEE AIU</div>
+    <h2>دعوة للتسجيل وحضور حفل الافتتاح الرسمي</h2>
+  </div>
+
+  <p class="lead">والذي سيشهد حضور نخبة من الشخصيات الرسمية والأكاديمية والعلمية المرموقة من داخل القطر وخارجه.<br>كما سيشارك في الحفل عدد من الشركات والمؤسسات التي ستقدم للحاضرين فرصاً مميزة للتدريب والتوظيف، إلى جانب التعريف بالفرص المهنية والعلمية التي تتيحها.</p>
+
+  <div class="notice">
+    <span class="ic"><svg class="i" viewBox="0 0 24 24"><path d="M12 3.5 2.8 19.5h18.4z"/><path d="M12 10v4.5M12 17.2v.1"/></svg></span>
+    <div>
+      <h3>تنويه مهم:</h3>
+      <p>يرجى التسجيل فقط في حال التأكد من القدرة على الحضور والالتزام بذلك، حيث يُعد التسجيل تأكيداً رسمياً للحضور، ويتم بناءً عليه تنظيم قوائم المشاركين والترتيبات الخاصة بالحفل.<br>تسجيلكم وعدم الحضور يعني فقدان فرصة التسجيل في فعاليات لاحقة ويحرم آخرين من المشاركة بسبب عدد المقاعد المحدودة.</p>
+    </div>
+  </div>
+
+  <div class="dates">
+    <div class="d deadline">
+      <span class="ic"><svg class="i" viewBox="0 0 24 24"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l2.5 1.5M9.5 2.5h5"/></svg></span>
+      <div><small>آخر موعد للتسجيل</small><b>الخميس 5 تشرين الثاني 2026</b></div>
+    </div>
+    <div class="d event">
+      <span class="ic"><svg class="i" viewBox="0 0 24 24"><rect x="3" y="4.5" width="18" height="16" rx="2.5"/><path d="M3 9.5h18M8 2.5v4M16 2.5v4M9 15l2 2 4-4"/></svg></span>
+      <div><small>موعد الحفل</small><b>الأربعاء 18 تشرين الثاني 2026<br><span style="font-weight:400;font-size:14px;opacity:.85">مسرح الجامعة العربية الدولية</span></b></div>
+    </div>
+  </div>
+
+  <div class="reg">
+    <span class="ic"><svg class="i" viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="6" height="6" rx="1"/><rect x="14.5" y="3.5" width="6" height="6" rx="1"/><rect x="3.5" y="14.5" width="6" height="6" rx="1"/><path d="M14.5 14.5h2.5v2.5M20.5 14.5v.1M14.5 20.5h2.5M20 17.5v3h-1"/></svg></span>
+    <span>للتسجيل يرجى استخدام الرابط المنشور على صفحاتنا الرسمية<br>أو مسح رمز الاستجابة السريع في الجامعة.</span>
+  </div>
+  <div class="sig"></div>
+</section>
+
+</body>
+</html>
