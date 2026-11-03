@@ -55,12 +55,8 @@ h2.title{font-family:"IBM Plex Sans Arabic","Readex Pro",sans-serif;font-weight:
 
 /* ================= PAGE 1 — COVER ================= */
 .cover{background:var(--navy-900);color:#fff}
-.cover .photo{position:absolute;inset:0 0 auto 0;height:690px;background:url(assets/cover-aiu-theater.jpg) center 55%/cover}
-.cover .photo::after{content:"";position:absolute;inset:0;background:
-  linear-gradient(180deg,rgba(6,15,31,.82) 0%,rgba(6,15,31,.45) 22%,rgba(10,25,48,.05) 44%,rgba(10,25,48,.1) 60%,rgba(10,25,48,.7) 82%,var(--navy-900) 100%)}
-.cover .grid-deco{position:absolute;inset:0;background-image:radial-gradient(rgba(201,168,92,.18) 1px,transparent 1px);background-size:22px 22px;mask-image:linear-gradient(180deg,transparent 60%,#000 85%);-webkit-mask-image:linear-gradient(180deg,transparent 60%,#000 85%)}
 .cover header{position:absolute;top:40px;left:56px;right:56px;display:flex;justify-content:space-between;align-items:center}
-.cover header .aiu{position:absolute;left:50%;top:50%;width:76px;height:76px;transform:translate(-50%,-50%);filter:drop-shadow(0 2px 8px rgba(0,0,0,.45))}
+.cover header .aiu{position:absolute;left:50%;top:50%;width:76px;height:76px;transform:translate(-50%,-50%);}
 .cover .branch{text-align:right}
 .cover .branch b{display:block;font-weight:600;font-size:15px}
 .cover .branch span{font-family:"IBM Plex Sans Arabic","Readex Pro",sans-serif;font-size:13px;color:var(--gold-soft);letter-spacing:.6px}
@@ -70,13 +66,11 @@ h2.title{font-family:"IBM Plex Sans Arabic","Readex Pro",sans-serif;font-weight:
 .cover .logos .chip{background:#fff;border-radius:10px;padding:7px 12px;display:flex}
 .cover .logos .chip img{height:26px}
 .cover .lead{position:absolute;top:150px;right:56px;max-width:660px}
-.cover .lead p{font-family:"IBM Plex Sans Arabic","Readex Pro",sans-serif;font-size:28px;font-weight:500;line-height:1.55;text-shadow:0 2px 18px rgba(0,0,0,.45)}
+.cover .lead p{font-family:"IBM Plex Sans Arabic","Readex Pro",sans-serif;font-size:28px;font-weight:500;line-height:1.55;}
 .cover .lead p em{font-style:normal;color:var(--gold-soft)}
 .cover .lead .rule{margin-top:18px;width:64px;height:3px;background:var(--gold);border-radius:2px}
 
 .cover .body{position:absolute;right:56px;left:56px;top:618px}
-.cover .badge{display:inline-flex;align-items:center;gap:10px;border:1px solid rgba(201,168,92,.55);color:var(--gold-soft);padding:7px 16px;border-radius:40px;font-size:13px;font-weight:500;background:rgba(10,25,48,.55);backdrop-filter:blur(4px)}
-.cover .badge i{width:7px;height:7px;border-radius:50%;background:var(--gold);box-shadow:0 0 0 4px rgba(201,168,92,.2)}
 .cover h1{font-family:"IBM Plex Sans Arabic","Readex Pro",sans-serif;font-weight:700;font-size:70px;line-height:1.25;margin-top:0;color:#D9BB78;letter-spacing:-1px;padding-bottom:.22em;margin-bottom:-.22em}
 .cover .sub{font-size:23px;font-weight:500;margin-top:6px;color:#fff}
 .cover .en{font-family:"Readex Pro",sans-serif;font-size:30px;font-weight:600;color:var(--sky);margin-top:6px;direction:ltr;text-align:right;letter-spacing:.2px}
@@ -108,7 +102,6 @@ h2.title{font-family:"IBM Plex Sans Arabic","Readex Pro",sans-serif;font-weight:
 .about .fgrid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
 .about .f{position:relative;height:138px;border-radius:14px;overflow:hidden;background-size:cover;background-position:center;padding:14px 16px;display:flex;flex-direction:column;justify-content:flex-end}
 .about .f::before{content:"";position:absolute;inset:0;background:rgba(6,15,31,.5)}
-.about .f h4,.about .f p,.col h3,.col li{text-shadow:0 1px 2px rgba(0,0,0,.85),0 0 10px rgba(0,0,0,.55)}
 .about .f>*{position:relative}
 .about .f h4{font-size:15px;white-space:nowrap;font-weight:600;display:flex;align-items:center;gap:8px;margin-bottom:4px;color:#fff}
 .about .f h4 svg{width:18px;height:18px;color:var(--gold)}
@@ -164,20 +157,10 @@ h2.title{font-family:"IBM Plex Sans Arabic","Readex Pro",sans-serif;font-weight:
 
 /* ================= PAGE 4 — INVITATION ================= */
 .inv{background:var(--navy-900);color:#fff}
-.inv .bg{position:absolute;inset:0;background:
-  radial-gradient(600px 400px at 85% 8%,rgba(201,168,92,.16),transparent 70%),
-  radial-gradient(500px 500px at 0% 100%,rgba(124,196,238,.10),transparent 70%)}
-.inv .rings{display:none}
 .inv .lockup{display:flex;justify-content:center;align-items:center;gap:34px;margin:22px 0 4px}
 .inv .lockup .l-ieee{height:40px}
 .inv .lockup .l-aiu{height:78px}
 .inv .lockup .sep{width:1px;height:64px;background:rgba(201,168,92,.45)}
-.inv .half{position:absolute;top:96px;height:240px;opacity:.1;pointer-events:none}
-.inv .half-aiu{left:30px;width:240px}
-.inv .half-ieee{right:30px;width:250px}
-.inv .rings::before,.inv .rings::after{content:"";position:absolute;border-radius:50%;border:1px solid rgba(201,168,92,.12)}
-.inv .rings::before{inset:-70px}
-.inv .rings::after{inset:-150px;border-color:rgba(201,168,92,.07)}
 .inv .hero{position:absolute;top:110px;right:56px;left:56px;text-align:center}
 .inv .hero .eyebrow::after{content:"";width:22px;height:2px;background:var(--gold)}
 .inv h1{font-family:"IBM Plex Sans Arabic","Readex Pro",sans-serif;font-weight:700;font-size:58px;line-height:1.2;margin-top:14px;color:#D9BB78;padding-bottom:.2em;margin-bottom:-.2em}
@@ -203,14 +186,18 @@ h2.title{font-family:"IBM Plex Sans Arabic","Readex Pro",sans-serif;font-weight:
 .inv .qrtile{width:118px;height:118px;flex:none;padding:9px;border-radius:12px}
 .inv .reg .ic{width:42px;height:42px;border-radius:12px;border:1px dashed rgba(201,168,92,.6);display:grid;place-items:center;color:var(--gold);flex:none}
 .inv .sig{position:absolute;bottom:0;left:0;right:0;height:6px;background:linear-gradient(90deg,var(--gold-deep),var(--gold-soft),var(--gold-deep))}
+/* baked, flat backgrounds (no soft masks in the PDF) */
+.cover{background:var(--navy-900) url(assets/cover-bg.jpg) 0 0/800px 1072px no-repeat}
+.inv{background:var(--navy-900) url(assets/inv-bg.jpg) 0 0/800px 1072px no-repeat}
+.aud .faq{background:var(--navy-900) url(assets/faq-bg.jpg) center/100% 100% no-repeat}
+.aud .faq::before{content:none}
+.about .f::before,.col::before{content:none}
 </style>
 </head>
 <body>
 
 <!-- ======================= PAGE 1 ======================= -->
 <section class="page cover">
-  <div class="photo"></div>
-  <div class="grid-deco"></div>
 
   <header>
     <div class="branch">
@@ -269,19 +256,19 @@ h2.title{font-family:"IBM Plex Sans Arabic","Readex Pro",sans-serif;font-weight:
     <div class="txt">
       <h3><span class="latin">IEEE</span> يجمع تخصصات الجامعة</h3>
       <div class="fgrid">
-        <div class="f" style="background-image:url(assets/fac-pharmacy.jpg)">
+        <div class="f" style="background-image:url(assets/fac-pharmacy-t.jpg)">
           <h4><svg class="i" viewBox="0 0 24 24"><path d="M10.5 3.5h3M12 3.5v5.2L6.4 18.2A1.8 1.8 0 0 0 8 21h8a1.8 1.8 0 0 0 1.6-2.8L12 8.7"/><path d="M8.2 15h7.6"/></svg>الصيدلة والعلوم الطبية EMBS</h4>
           <p>دعم الأبحاث الدوائية والتكنولوجيا الحيوية، والتعرّف إلى تطبيقات الهندسة الطبية والمؤتمرات العلمية.</p>
         </div>
-        <div class="f" style="background-image:url(assets/bg-network.jpg)">
+        <div class="f" style="background-image:url(assets/bg-network-t.jpg)">
           <h4><svg class="i" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4M9.5 8.5 7.5 10l2 1.5M14.5 8.5l2 1.5-2 1.5"/></svg>تكنولوجيا المعلومات (IT)</h4>
           <p>المساهمة في التحول الرقمي، وتطوير البرمجيات والمواقع، وإدارة الأنظمة والشبكات، ودعم الحلول التقنية والفعاليات الرقمية للفرع.</p>
         </div>
-        <div class="f" style="background-image:url(assets/bg-ailab.jpg)">
+        <div class="f" style="background-image:url(assets/bg-ailab-t.jpg)">
           <h4><svg class="i" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 2.5v3M12 18.5v3M2.5 12h3M18.5 12h3M5.3 5.3l2.1 2.1M16.6 16.6l2.1 2.1M5.3 18.7l2.1-2.1M16.6 7.4l2.1-2.1"/></svg>الهندسات</h4>
           <p>مشاريع تطبيقية وابتكار وتصميم، وربط المعرفة الهندسية بالتحديات الواقعية والعمل متعدد الاختصاصات.</p>
         </div>
-        <div class="f" style="background-image:url(assets/fac-dentistry.jpg)">
+        <div class="f" style="background-image:url(assets/fac-dentistry-t.jpg)">
           <h4><svg class="i" viewBox="0 0 24 24"><path d="M7.5 3.5c-2.2 0-3.5 1.8-3.5 4.3 0 2.2.9 3.3 1.4 5.2.6 2.3.7 7.5 2.6 7.5 1.6 0 1.5-4.5 2.3-6 .4-.8 1-.8 1.4 0 .8 1.5.7 6 2.3 6 1.9 0 2-5.2 2.6-7.5.5-1.9 1.4-3 1.4-5.2 0-2.5-1.3-4.3-3.5-4.3-1.8 0-2.6 1-4.5 1s-2.7-1-4.5-1z"/></svg>طب الأسنان</h4>
           <p>استكشاف التقنيات الرقمية في التشخيص والعلاج والتصوير الطبي، والبحث والابتكار في صحة الفم والأسنان.</p>
         </div>
@@ -331,7 +318,7 @@ h2.title{font-family:"IBM Plex Sans Arabic","Readex Pro",sans-serif;font-weight:
   </div>
 
   <div class="cols">
-    <div class="col" style="background-image:url(assets/aud-graduation.jpg)">
+    <div class="col" style="background-image:url(assets/aud-graduation-t.jpg)">
       <span class="n">01</span>
       <span class="ic"><svg class="i" viewBox="0 0 24 24"><path d="M2.5 9 12 4.5 21.5 9 12 13.5z"/><path d="M6.5 11v5c1.5 1.6 3.5 2.4 5.5 2.4s4-.8 5.5-2.4v-5M21.5 9v5.5"/></svg></span>
       <h3>طلاب الماجستير<br>والبحث العلمي</h3>
@@ -342,7 +329,7 @@ h2.title{font-family:"IBM Plex Sans Arabic","Readex Pro",sans-serif;font-weight:
         <li>إنجاز أبحاث ومشاريع تخرج استثنائية عبر <span class="latin">IEEE Xplore</span>، بإشراف مختصين محليين ودوليين.</li>
       </ul>
     </div>
-    <div class="col" style="background-image:url(assets/aud-work.jpg);background-position:62% center">
+    <div class="col" style="background-image:url(assets/aud-work-t.jpg);background-position:62% center">
       <span class="n">02</span>
       <span class="ic"><svg class="i" viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="2.5"/><path d="M8.5 7V5.5A1.5 1.5 0 0 1 10 4h4a1.5 1.5 0 0 1 1.5 1.5V7M3 12.5h18M11 12.5v2h2v-2"/></svg></span>
       <h3>طلاب سوق العمل<br>(المحلي والخارجي)</h3>
@@ -353,7 +340,7 @@ h2.title{font-family:"IBM Plex Sans Arabic","Readex Pro",sans-serif;font-weight:
         <li><b>ميزة تنافسية في الـ <span class="latin">CV</span>:</b> خبرة تطوعية في منظمة عالمية وتنظيم مؤتمرات على مستوى سوريا.</li>
       </ul>
     </div>
-    <div class="col" style="background-image:url(assets/aud-discovery.jpg);background-position:72% center">
+    <div class="col" style="background-image:url(assets/aud-discovery-t.jpg);background-position:72% center">
       <span class="n">03</span>
       <span class="ic"><svg class="i" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m15.5 8.5-2 5-5 2 2-5z"/></svg></span>
       <h3>مرحلة اكتشاف<br>الشغف والتجربة</h3>
@@ -391,10 +378,6 @@ h2.title{font-family:"IBM Plex Sans Arabic","Readex Pro",sans-serif;font-weight:
 
 <!-- ======================= PAGE 4 ======================= -->
 <section class="page inv dark">
-  <div class="bg"></div>
-  <img class="half half-aiu" src="assets/aiu-logo-white.png" alt="">
-  <img class="half half-ieee" src="assets/ieee-emblem-white.png" alt="">
-  <div class="rings"></div>
   <div class="run">
     <div class="sec"><span class="num">04</span><span class="bar"></span><span>خاتمة ودعوة</span></div>
     <img src="assets/ieee-white.png" alt="IEEE">
