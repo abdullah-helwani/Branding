@@ -75,7 +75,7 @@ h2.title{font-family:"IBM Plex Sans Arabic","Readex Pro",sans-serif;font-weight:
 .cover .body{position:absolute;right:56px;left:56px;top:618px}
 .cover .badge{display:inline-flex;align-items:center;gap:10px;border:1px solid rgba(201,168,92,.55);color:var(--gold-soft);padding:7px 16px;border-radius:40px;font-size:13px;font-weight:500;background:rgba(10,25,48,.55);backdrop-filter:blur(4px)}
 .cover .badge i{width:7px;height:7px;border-radius:50%;background:var(--gold);box-shadow:0 0 0 4px rgba(201,168,92,.2)}
-.cover h1{font-family:"IBM Plex Sans Arabic","Readex Pro",sans-serif;font-weight:700;font-size:70px;line-height:1.25;margin-top:0;background:linear-gradient(180deg,#f1dfae 0%,var(--gold) 55%,#b08f45 100%);-webkit-background-clip:text;background-clip:text;color:transparent;letter-spacing:-1px;padding-bottom:.22em;margin-bottom:-.22em}
+.cover h1{font-family:"IBM Plex Sans Arabic","Readex Pro",sans-serif;font-weight:700;font-size:70px;line-height:1.25;margin-top:0;color:#D9BB78;letter-spacing:-1px;padding-bottom:.22em;margin-bottom:-.22em}
 .cover .sub{font-size:23px;font-weight:500;margin-top:6px;color:#fff}
 .cover .en{font-family:"Readex Pro",sans-serif;font-size:30px;font-weight:600;color:var(--sky);margin-top:6px;direction:ltr;text-align:right;letter-spacing:.2px}
 .cover .tag{margin-top:16px;font-size:17px;color:rgba(255,255,255,.78);display:flex;align-items:center;gap:10px}
@@ -105,7 +105,7 @@ h2.title{font-family:"IBM Plex Sans Arabic","Readex Pro",sans-serif;font-weight:
 .about .fields h3 .latin{color:var(--gold-soft)}
 .about .fgrid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
 .about .f{position:relative;height:138px;border-radius:14px;overflow:hidden;background-size:cover;background-position:center;padding:14px 16px;display:flex;flex-direction:column;justify-content:flex-end}
-.about .f::before{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(6,15,31,.94) 0%,rgba(6,15,31,.78) 52%,rgba(6,15,31,.25) 100%)}
+.about .f::before{content:"";position:absolute;inset:0;background:rgba(6,15,31,.74)}
 .about .f>*{position:relative}
 .about .f h4{font-size:15px;white-space:nowrap;font-weight:600;display:flex;align-items:center;gap:8px;margin-bottom:4px;color:#fff}
 .about .f h4 svg{width:18px;height:18px;color:var(--gold)}
@@ -116,7 +116,7 @@ h2.title{font-family:"IBM Plex Sans Arabic","Readex Pro",sans-serif;font-weight:
 .about .how h2{font-size:28px}
 .about .cards{display:grid;grid-template-columns:1fr 1fr;gap:16px}
 .card{border-radius:16px;padding:16px 20px 14px;position:relative;overflow:hidden;background-size:cover;background-position:center;color:#fff}
-.card::before{content:"";position:absolute;inset:0;background:linear-gradient(270deg,rgba(6,15,31,.93) 0%,rgba(6,15,31,.84) 60%,rgba(6,15,31,.62) 100%)}
+.card{background:var(--navy-900)}
 .card>*{position:relative}
 .card .ic{width:36px;height:36px;border-radius:10px;background:rgba(201,168,92,.16);color:var(--gold);display:grid;place-items:center}
 .card .hd{display:flex;align-items:center;gap:12px;margin-bottom:6px}
@@ -131,14 +131,14 @@ h2.title{font-family:"IBM Plex Sans Arabic","Readex Pro",sans-serif;font-weight:
 .aud .top{position:absolute;top:92px;right:56px;left:56px}
 .aud .cols{position:absolute;top:196px;right:56px;left:56px;display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
 .col{border-radius:18px;padding:24px 20px 22px;position:relative;height:488px;overflow:hidden;background-size:cover;background-position:center;color:#fff}
-.col::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(6,15,31,.42) 0%,rgba(6,15,31,.8) 30%,rgba(6,15,31,.93) 62%,rgba(6,15,31,.96) 100%)}
+.col::before{content:"";position:absolute;inset:0;background:rgba(6,15,31,.8)}
 .col>*{position:relative}
 .col .n{font-family:"Readex Pro",sans-serif;font-weight:700;font-size:48px;line-height:1;color:transparent;-webkit-text-stroke:1.2px var(--gold);position:absolute;top:18px;left:20px}
 .col>.n{position:absolute}
 .col .ic{width:50px;height:50px;border-radius:14px;background:rgba(201,168,92,.16);color:var(--gold);display:grid;place-items:center;margin-bottom:16px}
 .col .ic svg{width:24px;height:24px}
 .col h3{font-family:"IBM Plex Sans Arabic","Readex Pro",sans-serif;font-weight:600;font-size:19.5px;line-height:1.45;color:#fff;min-height:58px}
-.col .rule{height:2px;background:linear-gradient(270deg,var(--gold),transparent);margin:14px 0 14px}
+.col .rule{height:1px;background:var(--gold);margin:14px 0 14px}
 .col ul{list-style:none;display:flex;flex-direction:column;gap:11px}
 .col li{font-size:13.8px;line-height:1.78;color:rgba(255,255,255,.88);padding-right:18px;position:relative}
 .col li::before{content:"";position:absolute;right:0;top:10px;width:7px;height:7px;border-radius:2px;background:var(--gold);transform:rotate(45deg)}
@@ -171,7 +171,7 @@ h2.title{font-family:"IBM Plex Sans Arabic","Readex Pro",sans-serif;font-weight:
 .inv .hero{position:absolute;top:110px;right:56px;left:56px;text-align:center}
 .inv .hero .eyebrow{color:var(--gold)}
 .inv .hero .eyebrow::after{content:"";width:22px;height:2px;background:var(--gold)}
-.inv h1{font-family:"IBM Plex Sans Arabic","Readex Pro",sans-serif;font-weight:700;font-size:58px;line-height:1.2;margin-top:14px;background:linear-gradient(180deg,#f1dfae,var(--gold) 60%,#b08f45);-webkit-background-clip:text;background-clip:text;color:transparent;padding-bottom:.2em;margin-bottom:-.2em}
+.inv h1{font-family:"IBM Plex Sans Arabic","Readex Pro",sans-serif;font-weight:700;font-size:58px;line-height:1.2;margin-top:14px;color:#D9BB78;padding-bottom:.2em;margin-bottom:-.2em}
 .inv .mark{font-family:"Readex Pro",sans-serif;font-weight:700;font-size:46px;letter-spacing:2px;margin-top:2px;direction:ltr}
 .inv .hero h2{font-family:"IBM Plex Sans Arabic","Readex Pro",sans-serif;font-weight:500;font-size:21px;color:var(--gold-soft);margin-top:14px}
 .inv .lead{position:absolute;top:400px;right:72px;left:72px;text-align:center;font-size:17px;line-height:2;color:rgba(255,255,255,.85)}
@@ -288,11 +288,11 @@ h2.title{font-family:"IBM Plex Sans Arabic","Readex Pro",sans-serif;font-weight:
       <h2 class="title">كيف تستفيد عملياً؟</h2>
     </div>
     <div class="cards">
-      <div class="card" style="background-image:url(assets/auditorium-2x.jpg)">
+      <div class="card">
         <div class="hd"><span class="ic"><svg class="i" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3z"/></svg></span><h4>أنشطة دولية مشتركة</h4></div>
         <p>حضور ورشات وفعاليات أونلاين تنظمها الجامعات الشريكة في أمريكا وألمانيا وسويسرا والاستفادة من خبراتهم.</p>
       </div>
-      <div class="card" style="background-image:url(assets/fac-it.jpg)">
+      <div class="card">
         <div class="hd"><span class="ic"><svg class="i" viewBox="0 0 24 24"><path d="M9 18h6M10 21h4"/><path d="M12 3a6 6 0 0 0-3.6 10.8c.7.5 1.1 1.3 1.1 2.2h5c0-.9.4-1.7 1.1-2.2A6 6 0 0 0 12 3z"/></svg></span><h4>مبادرات تقودها أنت</h4></div>
         <p>أي ورشة أو تدريب تقترحه أنت وزملاؤك نتكفل بدعمه وتنظيمه داخل الجامعة، مع إمكانية استضافة خبراء من داخل سوريا وخارجها.</p>
       </div>
