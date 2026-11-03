@@ -5,4 +5,5 @@ assets/aud-work.jpg        - Vitaly Gariev   https://unsplash.com/photos/F4coHib
 assets/aud-discovery.jpg   - RUT MIIT        https://unsplash.com/photos/RbC4-8CdbVQ
 conference-audience-unsplash.jpg - Marwen Larafa https://unsplash.com/photos/3ZAtXAQ81IU
 
+Cover photo and AIU logo: supplied by the IEEE AIU branch (Arab International University).
 All other photos: Arab International University website (aiu.edu.sy) and the original brochure.

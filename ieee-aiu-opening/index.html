@@ -55,13 +55,14 @@ h2.title{font-family:"IBM Plex Sans Arabic","Readex Pro",sans-serif;font-weight:
 
 /* ================= PAGE 1 — COVER ================= */
 .cover{background:var(--navy-900);color:#fff}
-.cover .photo{position:absolute;inset:0 0 auto 0;height:690px;background:url(assets/auditorium-2x.jpg) center 40%/cover}
+.cover .photo{position:absolute;inset:0 0 auto 0;height:690px;background:url(assets/cover-aiu-theater.jpg) center 55%/cover}
 .cover .photo::after{content:"";position:absolute;inset:0;background:
-  linear-gradient(180deg,rgba(6,15,31,.92) 0%,rgba(6,15,31,.55) 26%,rgba(10,25,48,.25) 48%,rgba(10,25,48,.75) 78%,var(--navy-900) 100%)}
+  linear-gradient(180deg,rgba(6,15,31,.82) 0%,rgba(6,15,31,.45) 22%,rgba(10,25,48,.05) 44%,rgba(10,25,48,.1) 60%,rgba(10,25,48,.7) 82%,var(--navy-900) 100%)}
 .cover .grid-deco{position:absolute;inset:0;background-image:radial-gradient(rgba(201,168,92,.18) 1px,transparent 1px);background-size:22px 22px;mask-image:linear-gradient(180deg,transparent 60%,#000 85%);-webkit-mask-image:linear-gradient(180deg,transparent 60%,#000 85%)}
 .cover header{position:absolute;top:40px;left:56px;right:56px;display:flex;justify-content:space-between;align-items:center}
+.cover header .aiu{position:absolute;left:50%;top:50%;width:76px;height:76px;transform:translate(-50%,-50%);filter:drop-shadow(0 2px 8px rgba(0,0,0,.45))}
 .cover .branch{text-align:right}
-.cover .branch b{display:block;font-weight:600;font-size:17px}
+.cover .branch b{display:block;font-weight:600;font-size:15px}
 .cover .branch span{font-family:"IBM Plex Sans Arabic","Readex Pro",sans-serif;font-size:13px;color:var(--gold-soft);letter-spacing:.6px}
 .cover .logos{display:flex;align-items:center;gap:18px}
 .cover .logos .ieee{height:42px}
@@ -213,6 +214,7 @@ h2.title{font-family:"IBM Plex Sans Arabic","Readex Pro",sans-serif;font-weight:
       <span class="chip"><img src="assets/embs.png" alt="IEEE EMBS — Engineering in Medicine &amp; Biology Society"></span>
       <img class="ieee" src="assets/ieee-white.png" alt="IEEE">
     </div>
+    <img class="aiu" src="assets/aiu-logo-white.png" alt="الجامعة العربية الدولية — Arab International University">
   </header>
 
   <div class="lead">
