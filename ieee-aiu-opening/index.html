@@ -65,7 +65,8 @@ h2.title{font-family:"IBM Plex Sans Arabic","Readex Pro",sans-serif;font-weight:
 .cover .branch b{display:block;font-weight:600;font-size:15px}
 .cover .branch span{font-family:"IBM Plex Sans Arabic","Readex Pro",sans-serif;font-size:13px;color:var(--gold-soft);letter-spacing:.6px}
 .cover .logos{display:flex;align-items:center;gap:18px}
-.cover .logos .ieee{height:42px}
+.cover .logos .ieee{height:34px}
+.cover .logos .embs{height:28px;padding-right:18px;border-right:1px solid rgba(255,255,255,.3)}
 .cover .logos .chip{background:#fff;border-radius:10px;padding:7px 12px;display:flex}
 .cover .logos .chip img{height:26px}
 .cover .lead{position:absolute;top:150px;right:56px;max-width:660px}
@@ -80,9 +81,9 @@ h2.title{font-family:"IBM Plex Sans Arabic","Readex Pro",sans-serif;font-weight:
 .cover .sub{font-size:23px;font-weight:500;margin-top:6px;color:#fff}
 .cover .en{font-family:"Readex Pro",sans-serif;font-size:30px;font-weight:600;color:var(--sky);margin-top:6px;direction:ltr;text-align:right;letter-spacing:.2px}
 .cover .tag{margin-top:16px;font-size:17px;color:rgba(255,255,255,.78);display:flex;align-items:center;gap:10px}
-.cover .info{position:absolute;bottom:44px;left:56px;right:56px;display:grid;grid-template-columns:1fr 1fr auto;align-items:stretch;border:1px solid rgba(201,168,92,.4);border-radius:16px;background:linear-gradient(135deg,rgba(26,55,102,.55),rgba(10,25,48,.4));overflow:hidden}
-.cover .info>div{display:flex;align-items:center;gap:14px;padding:18px 22px}
-.cover .info>div+div{border-right:1px solid rgba(201,168,92,.3)}
+.cover .info{position:absolute;bottom:52px;left:56px;right:56px;display:grid;grid-template-columns:1fr 1fr}
+.cover .info>div{display:flex;align-items:center;gap:14px;padding:4px 0}
+.cover .info>div+div{border-right:1px solid rgba(201,168,92,.45);padding-right:26px}
 .cover .info .qrcell{flex-direction:column;justify-content:center;gap:6px;padding:14px 18px}
 .qrtile{background:var(--gold-soft);border-radius:10px;padding:7px;display:block}
 .qrtile img{display:block;width:100%;height:100%}
@@ -147,7 +148,7 @@ h2.title{font-family:"IBM Plex Sans Arabic","Readex Pro",sans-serif;font-weight:
 .col li b{color:var(--gold-soft);font-weight:600}
 
 .aud .faq{position:absolute;top:708px;right:56px;left:56px;height:262px;border-radius:20px;background:var(--navy-900);color:#fff;padding:26px 30px;overflow:hidden}
-.aud .faq::before{content:"؟";position:absolute;left:24px;top:-40px;font-family:"IBM Plex Sans Arabic","Readex Pro",sans-serif;font-weight:700;font-size:220px;color:rgba(201,168,92,.08);line-height:1}
+.aud .faq::before{content:"";position:absolute;left:-30px;top:50%;width:240px;height:240px;transform:translateY(-50%);background:url(assets/aiu-logo-white.png) center/contain no-repeat;opacity:.07}
 .aud .faq h3{font-family:"IBM Plex Sans Arabic","Readex Pro",sans-serif;font-size:24px;font-weight:600;color:var(--gold);margin-bottom:18px;display:flex;align-items:center;gap:10px}
 .aud .faq .q{display:grid;grid-template-columns:230px 1fr;gap:20px}
 .aud .qa{border-radius:14px;padding:16px 18px;background:rgba(255,255,255,.05);border:1px solid rgba(201,168,92,.25);position:relative}
@@ -170,14 +171,20 @@ h2.title{font-family:"IBM Plex Sans Arabic","Readex Pro",sans-serif;font-weight:
 .inv .rings::before,.inv .rings::after{content:"";position:absolute;border-radius:50%;border:1px solid rgba(201,168,92,.12)}
 .inv .rings::before{inset:-70px}
 .inv .rings::after{inset:-150px;border-color:rgba(201,168,92,.07)}
-.inv .hero{position:absolute;top:110px;right:56px;left:56px;text-align:center}
-.inv .hero .eyebrow{color:var(--gold)}
+.inv .hero{position:absolute;top:96px;right:56px;left:56px;text-align:center}
+.inv .lockup{display:flex;justify-content:center;align-items:flex-end;gap:34px;margin-bottom:22px}
+.inv .lockup figure{display:flex;flex-direction:column;align-items:center;gap:10px}
+.inv .lockup .l-aiu{height:70px}
+.inv .lockup .l-ieee{height:36px;margin-bottom:17px}
+.inv .lockup figcaption{font-size:13px;font-weight:600;color:var(--gold-soft)}
+.inv .lockup .ltr-cap{direction:ltr;letter-spacing:.3px}
+.inv .lockup .sep{width:1px;height:84px;background:rgba(201,168,92,.45)}
 .inv .hero .eyebrow::after{content:"";width:22px;height:2px;background:var(--gold)}
 .inv h1{font-family:"IBM Plex Sans Arabic","Readex Pro",sans-serif;font-weight:700;font-size:58px;line-height:1.2;margin-top:14px;color:#D9BB78;padding-bottom:.2em;margin-bottom:-.2em}
 .inv .mark{font-family:"Readex Pro",sans-serif;font-weight:700;font-size:46px;letter-spacing:2px;margin-top:2px;direction:ltr}
 .inv .hero h2{font-family:"IBM Plex Sans Arabic","Readex Pro",sans-serif;font-weight:500;font-size:21px;color:var(--gold-soft);margin-top:14px}
-.inv .lead{position:absolute;top:400px;right:72px;left:72px;text-align:center;font-size:17px;line-height:2;color:rgba(255,255,255,.85)}
-.inv .notice{position:absolute;top:548px;right:56px;left:56px;border-radius:18px;background:rgba(255,255,255,.04);border:1px solid rgba(201,168,92,.35);padding:22px 26px 22px 26px;display:grid;grid-template-columns:52px 1fr;gap:18px}
+.inv .lead{position:absolute;top:418px;right:72px;left:72px;text-align:center;font-size:17px;line-height:2;color:rgba(255,255,255,.85)}
+.inv .notice{position:absolute;top:566px;right:56px;left:56px;border-radius:18px;background:rgba(255,255,255,.04);border:1px solid rgba(201,168,92,.35);padding:22px 26px 22px 26px;display:grid;grid-template-columns:52px 1fr;gap:18px}
 .inv .notice .ic{width:52px;height:52px;border-radius:14px;background:rgba(201,168,92,.14);color:var(--gold);display:grid;place-items:center}
 .inv .notice .ic svg{width:26px;height:26px}
 .inv .notice h3{font-family:"IBM Plex Sans Arabic","Readex Pro",sans-serif;font-weight:600;font-size:20px;color:var(--gold);margin-bottom:6px}
@@ -211,7 +218,7 @@ h2.title{font-family:"IBM Plex Sans Arabic","Readex Pro",sans-serif;font-weight:
       <span class="latin">IEEE AIU Student Branch</span>
     </div>
     <div class="logos">
-      <span class="chip"><img src="assets/embs.png" alt="IEEE EMBS — Engineering in Medicine &amp; Biology Society"></span>
+      <img class="embs" src="assets/embs-white.png" alt="IEEE EMBS — Engineering in Medicine &amp; Biology Society">
       <img class="ieee" src="assets/ieee-white.png" alt="IEEE">
     </div>
     <img class="aiu" src="assets/aiu-logo-white.png" alt="الجامعة العربية الدولية — Arab International University">
@@ -236,10 +243,6 @@ h2.title{font-family:"IBM Plex Sans Arabic","Readex Pro",sans-serif;font-weight:
     <div>
       <div style="padding:0"><small>المكان</small><b>مسرح الجامعة العربية الدولية (AIU)</b></div>
     </div>
-    <div class="qrcell">
-      <span class="qrtile"><img src="assets/qr-register.svg" alt="رمز QR لاستمارة التسجيل"></span>
-      <small>امسح للتسجيل</small>
-    </div>
   </div>
 </section>
 
@@ -247,7 +250,7 @@ h2.title{font-family:"IBM Plex Sans Arabic","Readex Pro",sans-serif;font-weight:
 <section class="page about">
   <div class="run">
     <div class="sec"><span class="num">02</span><span class="bar"></span><span>عن المنظمة</span></div>
-    <img src="assets/ieee.png" alt="IEEE">
+    <img src="assets/ieee-blue.png" alt="IEEE">
   </div>
 
   <div class="intro">
@@ -319,7 +322,7 @@ h2.title{font-family:"IBM Plex Sans Arabic","Readex Pro",sans-serif;font-weight:
 <section class="page aud">
   <div class="run">
     <div class="sec"><span class="num">03</span><span class="bar"></span><span>عن الفئات المستهدفة</span></div>
-    <img src="assets/ieee.png" alt="IEEE">
+    <img src="assets/ieee-blue.png" alt="IEEE">
   </div>
 
   <div class="top">
@@ -396,7 +399,11 @@ h2.title{font-family:"IBM Plex Sans Arabic","Readex Pro",sans-serif;font-weight:
   </div>
 
   <div class="hero">
-    <span class="eyebrow">أنت مدعو</span>
+    <div class="lockup">
+      <figure><img class="l-aiu" src="assets/aiu-logo-white.png" alt=""><figcaption>الجامعة العربية الدولية</figcaption></figure>
+      <span class="sep"></span>
+      <figure><img class="l-ieee" src="assets/ieee-white.png" alt=""><figcaption class="ltr-cap">IEEE AIU Student Branch</figcaption></figure>
+    </div>
     <h1>حفل الافتتاح الرسمي</h1>
     <div class="mark">IEEE AIU</div>
     <h2>دعوة للتسجيل وحضور حفل الافتتاح الرسمي</h2>
@@ -427,7 +434,6 @@ h2.title{font-family:"IBM Plex Sans Arabic","Readex Pro",sans-serif;font-weight:
     <span class="qrtile"><img src="assets/qr-register.svg" alt="رمز QR لاستمارة التسجيل"></span>
     <span>للتسجيل يرجى استخدام الرابط المنشور على صفحاتنا الرسمية<br>أو مسح رمز الاستجابة السريع في الجامعة.</span>
   </div>
-  <div class="sig"></div>
 </section>
 
 </body>
