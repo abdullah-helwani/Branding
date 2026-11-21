@@ -220,6 +220,24 @@ input.num.no{border-color:var(--bad);background:var(--bad-bg)}
 .qbar{height:5px;background:var(--surface2);border-radius:5px;overflow:hidden;margin:4px 0 10px}
 .qbar i{display:block;height:100%;background:var(--c,var(--navy));transition:width .4s}
 
+.res{border-radius:14px;padding:12px 14px;margin:10px 0;border:2px solid var(--line);animation:fadeup .4s ease}
+.res-opt{background:var(--good-bg);border-color:color-mix(in srgb,var(--good) 45%,transparent)}
+.res-inf{background:var(--bad-bg);border-color:color-mix(in srgb,var(--bad) 45%,transparent)}
+.res-unb{background:var(--warn-bg);border-color:color-mix(in srgb,var(--warn) 45%,transparent)}
+.res-h{font-family:var(--f-display);font-weight:700;font-size:.92rem}
+.res-z{font-size:1.45rem;font-weight:700;margin:2px 0 4px;font-family:var(--f-display)}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin:4px 0;direction:ltr;justify-content:flex-end}
+.vchip{background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:1px 11px;font-size:.92rem}
+.vchip.main{font-weight:700;border-color:var(--good);box-shadow:0 1px 0 var(--good)}
+.res-d{font-size:.88rem;margin-top:6px}
+.res-m{font-size:.8rem;color:var(--muted);margin-top:6px}
+.allbox{margin-top:10px;border-top:1px dashed var(--line);padding-top:4px}
+.allstep{margin:12px 0}
+.as-h{font-family:var(--f-display);font-size:.85rem;color:var(--c,var(--navy))}
+.as-c{background:var(--surface2);border-radius:10px;padding:8px 12px;font-size:.92rem}
+.reveal{margin-top:8px}
+.cf{position:fixed;top:-12px;width:8px;height:12px;border-radius:2px;z-index:60;pointer-events:none;animation:fall 1.6s ease-in forwards}
+@keyframes fall{to{transform:translateY(105vh) rotate(540deg);opacity:.2}}
 .foot{margin-top:28px;font-size:.8rem;color:var(--muted);text-align:center}
 @media (max-width:520px){
   body{font-size:15px}
@@ -617,8 +635,29 @@ function solutionLine(F,nx){if(!F)return"";const v=F.values();const keys=F.vars;
   return `<div class="fb ok">${mx(keys.filter(k=>k!=="x0").map(k=>`${vn(k)} = ${fN(v[k])}`).join(", "))} &nbsp;و&nbsp; ${mx(`<b><i>z</i> = ${fN(zz)}</b>`)}</div>`}
 
 /* ---------------- stepper ---------------- */
+function prepSteps(T,R){const st=R.steps.slice();
+  if(R.method==="art")st[0]=Object.assign({},st[0],{msg:intro(T,"art").msg+"<br>"+st[0].msg.split("<br>").slice(1).join("<br>")});else st.unshift(intro(T,R.method));
+  const last=st[st.length-1];if(last.end==="opt"&&R.final)last.extra=solutionLine(R.final);return st}
+function zOf(F){const c=F.corner();return F.sense==="max"?c.mulq(-1):c}
+function resultCard(R,steps,ex){const last=steps[steps.length-1];const end=last.end||"opt";
+  const meth={dual:"Dual Simplex",art:"Artificial Constraint ثم Dual Simplex",primal:"Simplex العادية",done:"الجدول الأول هو الحل"}[R.method];
+  const nT=steps.filter(s=>s.T).length;let body="";
+  if(end==="opt"&&R.final){const F=R.final;const v=F.values();
+    const dec=F.vars.filter(n=>/^x[1-9]/.test(n)),sl=F.vars.filter(n=>!/^x/.test(n));
+    body=`<div class="res-z">${mx("<i>z</i> = "+fN(zOf(F)))}</div><div class="chips">${dec.map(n=>`<span class="vchip main">${mx(vn(n)+" = "+fN(v[n]))}</span>`).join("")}</div><div class="chips">${sl.map(n=>`<span class="vchip">${mx(vn(n)+" = "+fN(v[n]))}</span>`).join("")}</div>`;
+    if(ex&&((ex.sense==="max"&&ex.cons.every(k=>k.s==="<="))||(ex.sense==="min"&&ex.cons.every(k=>k.s===">=")))){const bot=F.bottom();
+      const ys=ex.cons.map((_,i)=>{const j=F.idx("t"+(i+1));return j<0?null:bot[j].neg()});
+      if(ys.every(Boolean))body+=`<div class="res-d">🎁 وكمان حل الـ Dual ببلاش (السطر الأخير تحت <i>t</i> بعد تغيير الإشارة): ${mx(ys.map((y,i)=>vn("y"+(i+1))+" = "+fq(y)).join(", "))}</div>`}}
+  else if(end==="unb"){const F=last.T;body=`<div class="res-z">الحل لانهائي ♾️</div><p class="small">${F&&F.corner().hasM()?mx("<i>z</i> = "+fN(zOf(F)))+" بتكبر مع <i>M</i> بلا حدود، يعني ما في أكبر قيمة.":"في متغيّر بيقدر يكبر بلا حدود، فـ <i>z</i> ما إلها حد."}</p>`}
+  else body=`<div class="res-z">المسألة ما إلها حل ❌</div><p class="small">ما في ولا نقطة بتحقق كل القيود مع بعض.</p>`;
+  return `<div class="res res-${end}"><div class="res-h">${end==="opt"?"✅ الحل النهائي":"🏁 النتيجة النهائية"}</div>${body}<div class="res-m">الطريقة: <b>${meth}</b> · عدد الجداول: ${nT}</div></div>`}
+function allStepsHTML(steps){return steps.map((s,i)=>`<div class="allstep"><div class="as-h">الخطوة ${i+1} من ${steps.length}</div>${s.T?tableHTML(s.T,{leave:s.leave,enter:s.enter,ratios:s.ratios,rmin:s.rmin,pratios:s.pratios,pmin:s.pmin}):""}<div class="as-c">${s.msg||""}${s.extra||""}</div></div>`).join("")}
+function fullReveal(T,ex){const R=solveTableau(T,{tieLast:true});const st=prepSteps(T,R);return resultCard(R,st,ex)+`<div class="allbox">${allStepsHTML(st)}</div>`}
+function confetti(){if(matchMedia("(prefers-reduced-motion: reduce)").matches)return;const cols=["#3B4FB8","#0E7C86","#C2571A","#B08D57","#1E8E57"];
+  for(let i=0;i<34;i++){const d=document.createElement("i");d.className="cf";d.style.left=Math.random()*100+"vw";d.style.background=cols[i%5];d.style.animationDelay=Math.random()*.4+"s";document.body.appendChild(d);setTimeout(()=>d.remove(),2300)}}
 function makeStepper(el,steps,opts={}){let i=0;
-  el.innerHTML=`<div class="stg"></div><div class="cap"></div><div class="btns"><button class="btn" data-a="prev">السابق</button><button class="btn pri" data-a="next">التالي</button><button class="btn" data-a="play">▶ تشغيل</button><button class="btn" data-a="reset">من الأول</button></div><div class="dots">${steps.map(()=>"<i></i>").join("")}</div>`;
+  el.innerHTML=`<div class="stg"></div><div class="cap"></div><div class="btns"><button class="btn" data-a="prev">السابق</button><button class="btn pri" data-a="next">التالي</button><button class="btn" data-a="play">▶ تشغيل</button><button class="btn" data-a="reset">من الأول</button><button class="btn" data-a="all">📜 كل الخطوات مرة وحدة</button></div><div class="dots">${steps.map(()=>"<i></i>").join("")}</div><div class="allbox" hidden></div>`;
+  if(opts.top){el.insertAdjacentHTML("afterbegin",opts.top)}
   const stg=el.querySelector(".stg"),cap=el.querySelector(".cap");let timer=null;
   function show(prev){const s=steps[i];const ch=prev!==undefined&&prev<i&&steps[prev]&&steps[i]?diff(steps[prev].T,s.T):new Set();
     stg.innerHTML=s.html?s.html:tableHTML(s.T,{leave:s.leave,enter:s.enter,ratios:s.ratios,rmin:s.rmin,pratios:s.pratios,pmin:s.pmin,changed:ch});
@@ -630,6 +669,7 @@ function makeStepper(el,steps,opts={}){let i=0;
   function stop(){if(timer){clearInterval(timer);timer=null;el.querySelector('[data-a="play"]').textContent="▶ تشغيل"}}
   el.querySelector(".btns").addEventListener("click",e=>{const a=e.target.closest("button")?.dataset.a;if(!a)return;
     if(a==="prev"){stop();go(-1)}if(a==="next"){stop();go(1)}if(a==="reset"){stop();const p=i;i=0;show()}
+    if(a==="all"){const ab=el.querySelector(".allbox");ab.hidden=!ab.hidden;if(!ab.hidden&&!ab.innerHTML)ab.innerHTML=allStepsHTML(steps);e.target.closest("button").textContent=ab.hidden?"📜 كل الخطوات مرة وحدة":"خبّي الخطوات";return}
     if(a==="play"){if(timer){stop();return}if(i===steps.length-1){i=0;show()}e.target.textContent="⏸ إيقاف";timer=setInterval(()=>{if(i>=steps.length-1){stop();return}go(1)},2600)}});
   show();return{stop}}
 
@@ -740,10 +780,11 @@ function setupSignTrainer(){const el=document.getElementById("signTrainer");let 
       P.vr.map((v,j)=>`• ${vrTxt(v,"x"+(j+1))} ⟵ ${v==="free"?"القيد "+(j+1)+" بالـ Dual: =":(v===">=0"?"طبيعي ⟵ القيد "+(j+1)+": "+natD:"غريب ⟵ القيد "+(j+1)+": "+(natD==="≥"?"≤":"≥"))}`).join("<br>")+"</div>"}
   function check(reveal){let ok=true;const set=(id,ans)=>{const s=el.querySelector("#"+id);if(reveal)s.value=ans;const good=s.value===ans;s.classList.toggle("ok",good);s.classList.toggle("no",!good);if(!good)ok=false};
     set("sg-sense",P.dsense);P.ds.forEach((a,j)=>set("sg-ds"+j,a));P.yr.forEach((a,i)=>set("sg-y"+i,a));
-    const fb=el.querySelector("#sg-fb");
-    if(reveal){fb.innerHTML=`<div class="fb info"><b>الجواب مع السبب:</b>${why()}</div>`;return}
+    const fb=el.querySelector("#sg-fb");const yn=P.cons.map((_,i)=>"y"+(i+1));
+    const full=`<div class="center" style="margin-top:8px"><div class="lp res" style="--c:var(--good)"><div class="small" style="font-family:var(--f-display);color:var(--good)">✅ الـ Dual كامل</div><div class="row"><b>${P.dsense} <i>w</i> = ${lin(P.cons.map(k=>k.r),yn)}</b></div>${[...Array(P.n)].map((_,j)=>`<div class="row">${j===0?'<span class="st">s.t.</span>':'<span class="st" style="visibility:hidden">s.t.</span>'}${lin(P.cons.map(k=>k.a[j]),yn)} ${{">=":"≥","<=":"≤","=":"="}[P.ds[j]]} ${fq(new Q(P.c[j]))}</div>`).join("")}<div class="row"><span class="st" style="visibility:hidden">s.t.</span>${P.yr.map((r,i)=>r==="free"?vn(yn[i])+" حرّ":vn(yn[i])+(r===">=0"?" ≥ 0":" ≤ 0")).join(", ")}</div></div></div>`;
+    if(reveal){fb.innerHTML=`<div class="fb info"><b>الجواب مع السبب:</b>${why()}</div>${full}`;return}
     bump("signs",ok);document.getElementById("signScore").innerHTML=scoreTxt("signs");
-    fb.innerHTML=ok?`<div class="fb ok pop">ممتاز! كلّه صح ✓ ${why()}</div>`:`<div class="fb no shake">في خانات حمرا. فكّر: طبيعي ↔ طبيعي، غريب ↔ غريب، = ↔ حرّ. ${why()}</div>`}
+    if(ok)confetti();fb.innerHTML=(ok?`<div class="fb ok pop">ممتاز! كلّه صح ✓ ${why()}</div>`:`<div class="fb no shake">في خانات حمرا. فكّر: طبيعي ↔ طبيعي، غريب ↔ غريب، = ↔ حرّ. ${why()}</div>`)+full}
   render();document.getElementById("signScore").innerHTML=scoreTxt("signs")}
 
 /* ---------------- duality viz ---------------- */
@@ -793,13 +834,10 @@ const EX={ds1:{sense:"min",c:[1,1],cons:[{a:[1,1],s:">=",r:5},{a:[2,-1],s:">=",r
   a2:{sense:"min",c:[-1,1],cons:[{a:[2,-1],s:">=",r:-2},{a:[1,-2],s:"<=",r:-8},{a:[1,1],s:"<=",r:5}]},
   a3:{sense:"max",c:[5,7],cons:[{a:[1,1],s:">=",r:6},{a:[1,0],s:">=",r:4},{a:[0,1],s:"<=",r:3}]}};
 function intro(T,method){return {T,msg:`<b>نحوّل لمساواة:</b> كل قيد ≥ ضربناه بـ −1 وضفنا متغيّر فرق <i>t</i>. هاد الجدول الأول.<br>${T.feasible()?"✔ مسموح":"✘ مو مسموح (في <i>b</i> سالب، لونه أحمر)"} · ${T.optimal()?"✔ أمثل (السطر الأخير كلّه ≤ 0)":"✘ مو أمثل (في موجب بالسطر الأخير، لونه برتقالي)"} ⟵ <b>${{dual:"Dual Simplex",art:"Artificial Constraint",primal:"Simplex العادية",done:"خلصنا"}[method]}</b>.`}}
-function walkSteps(ex){const T=buildLP(ex.sense,ex.c,ex.cons);const R=solveTableau(T,{tieLast:true});const st=R.steps.slice();
-  if(R.method==="art")st[0]=Object.assign({},st[0],{msg:intro(T,"art").msg+"<br>"+st[0].msg.split("<br>").slice(1).join("<br>")});
-  else st.unshift(intro(T,R.method));
-  if(st.length){const last=st[st.length-1];if(last.end==="opt"&&R.final)last.extra=solutionLine(R.final)}return st}
+function walkSteps(ex){const T=buildLP(ex.sense,ex.c,ex.cons);const R=solveTableau(T,{tieLast:true});const st=prepSteps(T,R);st.card=resultCard(R,st,ex);return st}
 function setupDSWalk(){const ex=EX.ds1;document.getElementById("dsLP").innerHTML=lpHTML(ex.sense,ex.c,ex.cons);
-  makeStepper(document.getElementById("dsWalk"),walkSteps(ex),{onEnd:()=>markDone("dual-simplex")})}
-function setupArtWalk(){let cur=null;const pick=k=>{const ex=EX[k];document.getElementById("artLP").innerHTML=lpHTML(ex.sense,ex.c,ex.cons);if(cur)cur.stop();cur=makeStepper(document.getElementById("artWalk"),walkSteps(ex),{onEnd:()=>markDone("artificial")})};
+  const st=walkSteps(ex);makeStepper(document.getElementById("dsWalk"),st,{top:st.card,onEnd:()=>markDone("dual-simplex")})}
+function setupArtWalk(){let cur=null;const pick=k=>{const ex=EX[k];document.getElementById("artLP").innerHTML=lpHTML(ex.sense,ex.c,ex.cons);if(cur)cur.stop();const st=walkSteps(ex);cur=makeStepper(document.getElementById("artWalk"),st,{top:st.card,onEnd:()=>markDone("artificial")})};
   document.getElementById("artPick").addEventListener("click",e=>{const b=e.target.closest("button");if(!b)return;e.currentTarget.querySelectorAll("button").forEach(x=>x.setAttribute("aria-pressed",x===b?"true":"false"));pick(b.dataset.k)});pick("a1")}
 
 /* ---------------- interactive trainer (dual simplex) ---------------- */
@@ -821,7 +859,7 @@ function interactive(el,startT,scoreKey,done,finalMsg){/* user picks leaving row
     stage.querySelectorAll("tr.data").forEach(tr=>tr.addEventListener("click",()=>pickRow(+tr.dataset.row)));
     stage.querySelectorAll("th.cc").forEach(th=>th.addEventListener("click",()=>pickCol(+th.dataset.col)))}
   function say(cls,html){fb.innerHTML=`<div class="fb ${cls}">${html}</div>`}
-  function finish(){if(T.dualLeave()<0){phase="end";say("ok pop",`<b>خلصت!</b> ${mistakes===0?"وبدون ولا غلطة 🎉":"(عدد الأغلاط: "+mistakes+")"}<br>${finalMsg?finalMsg(T):"كل <i>b</i> ≥ 0 ⟵ الحل الأمثل: "+solutionLine(T)}`);bump(scoreKey,mistakes===0);done&&done(true);return true}
+  function finish(){if(T.dualLeave()<0){phase="end";say("ok pop",`<b>خلصت!</b> ${mistakes===0?"وبدون ولا غلطة 🎉":"(عدد الأغلاط: "+mistakes+")"}<br>${finalMsg?finalMsg(T):"كل <i>b</i> ≥ 0 ⟵ الحل الأمثل: "+solutionLine(T)}`);bump(scoreKey,mistakes===0);if(mistakes===0)confetti();done&&done(true);return true}
     const r=T.dualLeave();if(T.A[r].every(a=>a.sign()>=0)){phase="end";say("no",`سطر ${vn(T.vars[T.basis[r]])} سالب وكل أرقامه ≥ 0 ⟵ <b>المسألة ما إلها حل</b>.`);bump(scoreKey,mistakes===0);done&&done(false);return true}return false}
   function pickRow(i){if(phase!=="row")return;const r=T.dualLeave();
     if(T.b[i].cmp(T.b[r])===0&&T.b[i].sign()<0){chosenR=i;phase="col";say("ok",`صح ✓ ${vn(T.vars[T.basis[i]])} بيطلع. هلّق اضغط على <b>عمود</b> المتغيّر اللي بيفوت.`);draw();return}
@@ -835,8 +873,9 @@ function interactive(el,startT,scoreKey,done,finalMsg){/* user picks leaving row
   help.onclick=()=>{help.dataset.on=help.dataset.on==="1"?"0":"1";help.textContent=help.dataset.on==="1"?"خبّي النسب":"أظهر النسب";draw()};
   draw();if(!finish())say("info","اضغط على <b>السطر</b> اللي بيطلع.")}
 function setupDSTrain(){const el=document.getElementById("dsTrain");
-  function start(){const G=genDS();el.innerHTML=`<div class="center"><div class="lp">${lpHTML(G.ex.sense,G.ex.c,G.ex.cons)}</div></div><p class="small muted">الجدول الأول جاهز (≥ ضربناه بـ −1). السطر الأخير أمثل، بس في b سالب.</p><div class="stg"></div><div class="ifb"></div><div class="btns"><button class="btn hint" data-on="0">أظهر النسب</button><button class="btn pri nw">مسألة جديدة</button></div>`;
-    el.querySelector(".nw").onclick=start;interactive(el,G.T,"ds",()=>{document.getElementById("dsScore").innerHTML=scoreTxt("ds")})}
+  function start(){const G=genDS();el.innerHTML=`<div class="center"><div class="lp">${lpHTML(G.ex.sense,G.ex.c,G.ex.cons)}</div></div><p class="small muted">الجدول الأول جاهز (≥ ضربناه بـ −1). السطر الأخير أمثل، بس في b سالب.</p><div class="stg"></div><div class="ifb"></div><div class="btns"><button class="btn hint" data-on="0">أظهر النسب</button><button class="btn rv">👀 فرجيني الحل كامل</button><button class="btn pri nw">مسألة جديدة</button></div><div class="reveal" hidden></div>`;
+    el.querySelector(".nw").onclick=start;const rv=el.querySelector(".reveal");el.querySelector(".rv").onclick=e=>{rv.hidden=!rv.hidden;if(!rv.innerHTML)rv.innerHTML=fullReveal(G.T,G.ex);e.target.textContent=rv.hidden?"👀 فرجيني الحل كامل":"خبّي الحل"};
+    interactive(el,G.T,"ds",()=>{document.getElementById("dsScore").innerHTML=scoreTxt("ds")})}
   start();document.getElementById("dsScore").innerHTML=scoreTxt("ds")}
 
 /* ---------------- artificial trainer ---------------- */
@@ -857,8 +896,8 @@ function setupArtTrain(){const el=document.getElementById("artTrain");
       <div class="part1"><p><b>الخطوة 1:</b> اختار المتغيرات المزعجة (اللي رقمها موجب بالسطر الأخير، لونه برتقالي):</p>
       <div>${T.vars.map((v,j)=>T.basis.includes(j)?"":`<label class="chk"><input type="checkbox" value="${j}">${vn(v)}</label>`).join("")}</div>
       <div class="btns"><button class="btn pri c1">تأكيد</button></div></div><div class="ifb1"></div><div class="part2"></div>
-      <div class="btns"><button class="btn nw">مسألة جديدة</button></div>`;
-    el.querySelector(".nw").onclick=start;const st=el.querySelectorAll(".stage span");
+      <div class="btns"><button class="btn rv">👀 فرجيني الحل كامل</button><button class="btn nw">مسألة جديدة</button></div><div class="reveal" hidden></div>`;
+    el.querySelector(".nw").onclick=start;{const rv=el.querySelector(".reveal");el.querySelector(".rv").onclick=e=>{rv.hidden=!rv.hidden;if(!rv.innerHTML)rv.innerHTML=fullReveal(T,G.ex);e.target.textContent=rv.hidden?"👀 فرجيني الحل كامل":"خبّي الحل"}}const st=el.querySelectorAll(".stage span");
     el.querySelector(".c1").onclick=()=>{const sel=[...el.querySelectorAll(".part1 input:checked")].map(i=>+i.value).sort();
       const ok=sel.length===bad.length&&sel.every((v,i)=>v===bad.slice().sort()[i]);const fb=el.querySelector(".ifb1");
       if(!ok){fb.innerHTML=`<div class="fb no shake">مش هيك. المزعج هو اللي قيمته <b>موجبة</b> بالسطر الأخير.</div>`;return}
@@ -898,13 +937,11 @@ function setupSolver(){const form=document.getElementById("sform");let M={sense:
   document.getElementById("exBtn").onclick=()=>{exI=(exI+1)%exs.length;const e=EX[exs[exI]];M={sense:e.sense,c:e.c.slice(),cons:e.cons.map(k=>({a:k.a.slice(),s:k.s,r:k.r}))};render();solve()};
   let cur=null;
   function solve(){const err=document.getElementById("solveErr");if(!read()){err.hidden=false;err.textContent="في خانة فيها رقم مو مفهوم (لونها أحمر). اكتب رقم صحيح أو كسر متل 3/2.";return}err.hidden=true;
-    const T=buildLP(M.sense,M.c,M.cons);const R=solveTableau(T);const st=R.steps.slice();
-    if(R.method==="art")st[0]=Object.assign({},st[0],{msg:intro(T,"art").msg+"<br>"+st[0].msg.split("<br>").slice(1).join("<br>")});else st.unshift(intro(T,R.method));
-    const last=st[st.length-1];if(last.end==="opt"&&R.final)last.extra=solutionLine(R.final);
+    const T=buildLP(M.sense,M.c,M.cons);const R=solveTableau(T,{tieLast:true});const st=prepSteps(T,R);const last=st[st.length-1];
     const out=document.getElementById("solveOut");out.hidden=false;
     const lab={dual:"Dual Simplex",art:"Artificial Constraint ثم Dual Simplex",primal:"Simplex العادية",done:"الجدول الأول هو الحل"}[R.method];
     const endTxt={opt:"حل أمثل",inf:"ما في حل",unb:"حل لانهائي"}[last.end]||"";
-    document.getElementById("solveSummary").innerHTML=`<div class="center"><div class="lp">${lpHTML(M.sense,M.c,M.cons)}</div></div><p>الطريقة: <b>${lab}</b> · عدد الخطوات: ${st.length} · النتيجة: <b>${endTxt}</b></p>`;
+    document.getElementById("solveSummary").innerHTML=`<div class="center"><div class="lp">${lpHTML(M.sense,M.c,M.cons)}</div></div>${resultCard(R,st,M)}<p class="small muted">تحت فيك تمشي جدول جدول، أو تكبس «📜 كل الخطوات مرة وحدة» لتشوف كل شي سوا.</p>`;
     if(cur)cur.stop();cur=makeStepper(document.getElementById("solveSteps"),st);markDone("solver");out.scrollIntoView({behavior:"smooth",block:"start"})}
   document.getElementById("solveBtn").onclick=solve;render()}
 
@@ -920,7 +957,9 @@ function setupMethodQ(){const el=document.getElementById("methodQ");let ans;
       <div class="opts" style="grid-template-columns:repeat(auto-fit,minmax(150px,1fr))"><button class="opt" data-k="11">خلصنا، هو الحل</button><button class="opt" data-k="10">Simplex العادية</button><button class="opt" data-k="01">Dual Simplex</button><button class="opt" data-k="00">Artificial Constraint</button></div><div class="mfb"></div>`;
     el.querySelectorAll(".opt").forEach(b=>b.onclick=()=>{if(el.dataset.lock==="1")return;el.dataset.lock="1";const ok=b.dataset.k===ans;b.classList.add(ok?"ok":"no");if(!ok)el.querySelector(`[data-k="${ans}"]`).classList.add("ok");
       bump("method",ok);document.getElementById("methodScore").innerHTML=scoreTxt("method");
-      el.querySelector(".mfb").innerHTML=`<div class="fb ${ok?"ok":"no"}">${ok?"صح ✓ ":"لا. "}${ans[0]==="1"?"كل b ≥ 0 (مسموح)":"في b سالب (مو مسموح)"}، و${ans[1]==="1"?"السطر الأخير كلّه ≤ 0 (أمثل)":"في موجب بالسطر الأخير (مو أمثل)"}.</div><div class="btns"><button class="btn pri nx">التالي</button></div>`;
+      if(ok)confetti();const Rq=solveTableau(G.T);const stq=prepSteps(G.T,Rq);
+      el.querySelector(".mfb").innerHTML=`<div class="fb ${ok?"ok":"no"}">${ok?"صح ✓ ":"لا. "}${ans[0]==="1"?"كل b ≥ 0 (مسموح)":"في b سالب (مو مسموح)"}، و${ans[1]==="1"?"السطر الأخير كلّه ≤ 0 (أمثل)":"في موجب بالسطر الأخير (مو أمثل)"}.</div>${resultCard(Rq,stq)}<div class="btns"><button class="btn sa">📜 شوف كل الخطوات لآخر الحل</button><button class="btn pri nx">التالي</button></div><div class="allbox" hidden>${allStepsHTML(stq)}</div>`;
+      el.querySelector(".sa").onclick=e=>{const ab=el.querySelector(".mfb .allbox");ab.hidden=!ab.hidden;e.target.textContent=ab.hidden?"📜 شوف كل الخطوات لآخر الحل":"خبّي الخطوات"};
       el.querySelector(".nx").onclick=()=>{el.dataset.lock="0";render()}})}
   render();document.getElementById("methodScore").innerHTML=scoreTxt("method")}
 
